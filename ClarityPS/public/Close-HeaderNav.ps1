@@ -1,12 +1,12 @@
-function Close-FlexItem
+function Close-HeaderNav
 {
     <#
     .DESCRIPTION
-        Closes Flex Item Element
+        Closes Header-Nav Element
     .PARAMETER Title
         Title, used for comment
     .EXAMPLE
-        Close-FlexItem -Title MyCard
+        Close-HeaderNav -Title MyCard
     .NOTES
         No notes at this time.
     #>
@@ -19,18 +19,18 @@ function Close-FlexItem
     param(
         [Parameter()][String]$Title
     )
-    if ($pscmdlet.ShouldProcess("Starting Close-FlexItem function."))
+    if ($pscmdlet.ShouldProcess("Starting Close-HeaderNav function."))
     {
         # Determine if a title was specified
         if ($Title)
         {
-            $FlexItemHtml = "</div><! End $Title>"
+            $HeaderNavHtml = "</div><! End $Title>"
         }
         else
         {
-            $FlexItemHtml = "</div>"
+            $HeaderNavHtml = "</div>"
         }
-        $FlexItemHtml
+        $HeaderNavHtml
     }
     else
     {

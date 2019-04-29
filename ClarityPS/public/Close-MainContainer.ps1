@@ -1,12 +1,12 @@
-function Close-FlexItem
+function Close-MainContainer
 {
     <#
     .DESCRIPTION
-        Closes Flex Item Element
+        Closes Main container Element
     .PARAMETER Title
         Title, used for comment
     .EXAMPLE
-        Close-FlexItem -Title MyCard
+        Close-MainContainer -Title MyCard
     .NOTES
         No notes at this time.
     #>
@@ -19,18 +19,18 @@ function Close-FlexItem
     param(
         [Parameter()][String]$Title
     )
-    if ($pscmdlet.ShouldProcess("Starting Close-FlexItem function."))
+    if ($pscmdlet.ShouldProcess("Starting Close-MainContainer function."))
     {
         # Determine if a title was specified
         if ($Title)
         {
-            $FlexItemHtml = "</div><! End $Title>"
+            $MainContainerHtml = "</div><! End $Title>"
         }
         else
         {
-            $FlexItemHtml = "</div>"
+            $MainContainerHtml = "</div>"
         }
-        $FlexItemHtml
+        $MainContainerHtml
     }
     else
     {

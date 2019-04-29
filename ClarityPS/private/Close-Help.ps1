@@ -2,7 +2,7 @@ function Close-Help
 {
     <#
     .DESCRIPTION
-        Closes Flex Item Element
+        Closes Help Link with Cog Icon.
     .PARAMETER Title
         Title, used for comment
     .EXAMPLE
