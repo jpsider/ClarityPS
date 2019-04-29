@@ -1,14 +1,12 @@
-function New-ReportCard
+function Close-CardText
 {
     <#
     .DESCRIPTION
-        Builds HTML Reports using VMware's ClarityUI library.
-    .PARAMETER tbd01
-        working on the details
-    .PARAMETER tbd02
-        working on the details
+        Closes Card-Text Element
+    .PARAMETER Title
+        Title, used for comment
     .EXAMPLE
-        New-ReportCard
+        Close-CardText -Title MyCard
     .NOTES
         No notes at this time.
     #>
@@ -17,22 +15,22 @@ function New-ReportCard
         ConfirmImpact = "Low"
     )]
     [OutputType([String])]
+    [OutputType([Boolean])]
     param(
-        [Parameter()][String]$tbd01,
-        [Parameter()][String]$tbd02
+        [Parameter()][String]$Title
     )
-    if ($pscmdlet.ShouldProcess("Starting New-ReportCard function."))
+    if ($pscmdlet.ShouldProcess("Starting Close-CardText function."))
     {
-        try
+        # Determine if a title was specified
+        if ($Title)
         {
-            #Add Function details
+            $CardTextHtml = "</div><! End $Title>"
         }
-        catch
+        else
         {
-            $ErrorMessage = $_.Exception.Message
-            $FailedItem = $_.Exception.ItemName
-            Throw "New-ReportCard: $ErrorMessage $FailedItem"
+            $CardTextHtml = "</div>"
         }
+        $CardTextHtml
     }
     else
     {

@@ -1,14 +1,14 @@
-function New-ReportCard
+function Add-Icon
 {
     <#
     .DESCRIPTION
         Builds HTML Reports using VMware's ClarityUI library.
-    .PARAMETER tbd01
-        working on the details
-    .PARAMETER tbd02
-        working on the details
+    .PARAMETER Icon
+        Clarity Icon.
+    .PARAMETER IconSize
+        Size of the Icon.
     .EXAMPLE
-        New-ReportCard
+        Add-Icon
     .NOTES
         No notes at this time.
     #>
@@ -17,22 +17,15 @@ function New-ReportCard
         ConfirmImpact = "Low"
     )]
     [OutputType([String])]
+    [OutputType([boolean])]
     param(
-        [Parameter()][String]$tbd01,
-        [Parameter()][String]$tbd02
+        [Parameter(Mandatory = $true)][String]$Icon,
+        [Parameter()][String]$IconSize = 24
     )
-    if ($pscmdlet.ShouldProcess("Starting New-ReportCard function."))
+    if ($pscmdlet.ShouldProcess("Starting Add-Icon function."))
     {
-        try
-        {
-            #Add Function details
-        }
-        catch
-        {
-            $ErrorMessage = $_.Exception.Message
-            $FailedItem = $_.Exception.ItemName
-            Throw "New-ReportCard: $ErrorMessage $FailedItem"
-        }
+        $IconHTML = "<clr-icon shape='$Icon' size='$IconSize'></clr-icon>"
+        $IconHTML
     }
     else
     {

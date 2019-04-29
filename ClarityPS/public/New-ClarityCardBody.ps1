@@ -1,14 +1,12 @@
-function New-ReportCard
+function New-ClarityCardBody
 {
     <#
     .DESCRIPTION
         Builds HTML Reports using VMware's ClarityUI library.
-    .PARAMETER tbd01
-        working on the details
-    .PARAMETER tbd02
-        working on the details
+    .PARAMETER CardText
+        HTML Text String
     .EXAMPLE
-        New-ReportCard
+        New-ClarityCardBody -CardText $CardText
     .NOTES
         No notes at this time.
     #>
@@ -17,21 +15,22 @@ function New-ReportCard
         ConfirmImpact = "Low"
     )]
     [OutputType([String])]
+    [OutputType([boolean])]
     param(
-        [Parameter()][String]$tbd01,
-        [Parameter()][String]$tbd02
+        [Parameter(Mandatory = $true)][System.Object]$CardText
     )
-    if ($pscmdlet.ShouldProcess("Starting New-ReportCard function."))
+    if ($pscmdlet.ShouldProcess("Starting New-ClarityCardBody function."))
     {
-        try
+        # If the CardText is less than or equal to 9 characters, throw an error.
+        if ($CardText.Length -le 2)
         {
-            #Add Function details
+            Throw "New-ClarityCardBody: CardText is less that expected length."
         }
-        catch
+        else
         {
-            $ErrorMessage = $_.Exception.Message
-            $FailedItem = $_.Exception.ItemName
-            Throw "New-ReportCard: $ErrorMessage $FailedItem"
+            $CardBodyText = "<p class='card-text'>"
+            $CardBodyText += $CardText
+            $CardBodyText
         }
     }
     else

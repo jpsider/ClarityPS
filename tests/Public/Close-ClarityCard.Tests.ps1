@@ -1,15 +1,17 @@
-$script:ModuleName = 'ReportCardPS'
+$script:ModuleName = 'ClarityPS'
 
 $here = (Split-Path -Parent $MyInvocation.MyCommand.Path) -replace 'tests', "$script:ModuleName"
 $sut = (Split-Path -Leaf $MyInvocation.MyCommand.Path) -replace '\.Tests\.', '.'
 . "$here\$sut"
 
-Describe "New-ReportCard function for $script:ModuleName" -Tags Build
-{
+Describe "Close-ClarityCard function for $script:ModuleName" -Tags Build {
     It "Should return False if -WhatIf is used." {
-        New-ReportCard -WhatIf | Should be $false
-}
-It "Should Return true." {
-    New-ReportCard | Should be $true
-}
+        Close-ClarityCard -Title TEST -WhatIf | Should be $false
+    }
+    It "Should not be Null." {
+        Close-ClarityCard -Title TEST | Should not be $null
+    }
+    It "Should be proper ClarityPS HTML." {
+        Close-ClarityCard -Title TEST | Should be "</center></div></div></div><! End TEST Card>"
+    }
 }

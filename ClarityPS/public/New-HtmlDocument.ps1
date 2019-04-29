@@ -17,6 +17,7 @@ function New-ReportCard
         ConfirmImpact = "Low"
     )]
     [OutputType([String])]
+    [OutputType([boolean])]
     param(
         [Parameter()][String]$tbd01,
         [Parameter()][String]$tbd02
