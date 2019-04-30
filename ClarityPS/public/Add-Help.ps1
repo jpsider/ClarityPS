@@ -18,7 +18,7 @@ function Add-Help
     [OutputType([Boolean])]
     param(
         [Parameter()][String]$Title,
-        [Parameter()][String]$URL
+        [Parameter(Mandatory = $true)][String]$URL
     )
     if ($pscmdlet.ShouldProcess("Starting Add-Help function."))
     {

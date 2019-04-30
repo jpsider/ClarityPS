@@ -1,12 +1,12 @@
-function Close-FlexItem
+function Close-Branding
 {
     <#
     .DESCRIPTION
-        Closes Flex Item Element
+        Closes Branding Element
     .PARAMETER Title
         Title, used for comment
     .EXAMPLE
-        Close-FlexItem -Title MyCard
+        Close-Branding -Title MyCard
     .NOTES
         No notes at this time.
     #>
@@ -19,18 +19,18 @@ function Close-FlexItem
     param(
         [Parameter()][String]$Title
     )
-    if ($pscmdlet.ShouldProcess("Starting Close-FlexItem function."))
+    if ($pscmdlet.ShouldProcess("Starting Close-Branding function."))
     {
         # Determine if a title was specified
         if ($Title)
         {
-            $FlexItemHtml = "</div><! End $Title>"
+            $BrandingHtml = "</div><! End $Title>"
         }
         else
         {
-            $FlexItemHtml = "</div>"
+            $BrandingHtml = "</div>"
         }
-        $FlexItemHtml
+        $BrandingHtml
     }
     else
     {

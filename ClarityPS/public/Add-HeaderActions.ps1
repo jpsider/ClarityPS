@@ -1,14 +1,12 @@
-function New-ReportCard
+function Add-HeaderActions
 {
     <#
     .DESCRIPTION
-        Builds HTML Reports using VMware's ClarityUI library.
-    .PARAMETER tbd01
-        working on the details
-    .PARAMETER tbd02
-        working on the details
+        Adds Flex Item Element
+    .PARAMETER Title
+        Title, used for comment
     .EXAMPLE
-        New-ReportCard
+        Add-HeaderActions -Title MyCard
     .NOTES
         No notes at this time.
     #>
@@ -17,23 +15,22 @@ function New-ReportCard
         ConfirmImpact = "Low"
     )]
     [OutputType([String])]
-    [OutputType([boolean])]
+    [OutputType([Boolean])]
     param(
-        [Parameter()][String]$tbd01,
-        [Parameter()][String]$tbd02
+        [Parameter()][String]$Title
     )
-    if ($pscmdlet.ShouldProcess("Starting New-ReportCard function."))
+    if ($pscmdlet.ShouldProcess("Starting Add-HeaderActions function."))
     {
-        try
+        # Determine if a title was specified
+        if ($Title)
         {
-            #Add Function details
+            $HeaderActionsHtml = "<div class='header-actions'><! Start $Title>"
         }
-        catch
+        else
         {
-            $ErrorMessage = $_.Exception.Message
-            $FailedItem = $_.Exception.ItemName
-            Throw "New-ReportCard: $ErrorMessage $FailedItem"
+            $HeaderActionsHtml = "<div class='header-actions'>"
         }
+        $HeaderActionsHtml
     }
     else
     {

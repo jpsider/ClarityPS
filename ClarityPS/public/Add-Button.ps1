@@ -28,14 +28,14 @@ function Add-Button
     if ($pscmdlet.ShouldProcess("Starting Add-Button function."))
     {
         # Determine if a title was specified
-        $ButtonHtml = "<button class='$Class' type='button' onclick='$OnClick' name='$Name' value='$ButtonValue' id='$ID'"
+        $ButtonHtml = "<button class='$Class' type='button' name='$Name' value='$ButtonValue' id='$ID'"
         if ($OnClick)
         {
-            $ButtonHtml += $ButtonHtml + "onclick'$OnClick'" + ">$ButtonText"
+            $ButtonHtml += (" onclick='$OnClick'" + ">$ButtonText")
         }
         else
         {
-            $ButtonHtml += $ButtonHtml + ">$ButtonText"
+            $ButtonHtml += ">$ButtonText"
         }
         
         if ($Title)

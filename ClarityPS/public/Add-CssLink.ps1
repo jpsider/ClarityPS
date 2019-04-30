@@ -6,7 +6,7 @@ function Add-CssLink
     .PARAMETER Title
         Title, used for comment
     .EXAMPLE
-        Add-CssLink -Title MyCard
+        Add-CssLink -Title MyCard -URL "http://invoke-automation.blog" -LinkTitle "Invoke-Automation"
     .NOTES
         No notes at this time.
     #>

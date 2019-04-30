@@ -1,4 +1,4 @@
-function Close-FlexItem
+function Close-ButtonGroup
 {
     <#
     .DESCRIPTION
@@ -6,7 +6,7 @@ function Close-FlexItem
     .PARAMETER Title
         Title, used for comment
     .EXAMPLE
-        Close-FlexItem -Title MyCard
+        Close-ButtonGroup -Title MyCard
     .NOTES
         No notes at this time.
     #>
@@ -19,18 +19,18 @@ function Close-FlexItem
     param(
         [Parameter()][String]$Title
     )
-    if ($pscmdlet.ShouldProcess("Starting Close-FlexItem function."))
+    if ($pscmdlet.ShouldProcess("Starting Close-ButtonGroup function."))
     {
         # Determine if a title was specified
         if ($Title)
         {
-            $FlexItemHtml = "</div><! End $Title>"
+            $ButtonGroupHtml = "</div><! End $Title>"
         }
         else
         {
-            $FlexItemHtml = "</div>"
+            $ButtonGroupHtml = "</div>"
         }
-        $FlexItemHtml
+        $ButtonGroupHtml
     }
     else
     {

@@ -6,7 +6,7 @@ function Add-HtmlBody
     .PARAMETER Title
         Title, used for comment
     .EXAMPLE
-        Add-HtmlBody -Title MyCard
+        Add-HtmlBody -Title MyCard -HtmlBodyOption "onload='set_style_from_cookie()'"
     .NOTES
         No notes at this time.
     #>
