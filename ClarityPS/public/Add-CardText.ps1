@@ -1,14 +1,14 @@
-function New-ReportCard
+function Add-CardText
 {
     <#
     .DESCRIPTION
-        Builds HTML Reports using VMware's ClarityUI library.
-    .PARAMETER tbd01
-        working on the details
-    .PARAMETER tbd02
-        working on the details
+        Adds Flex Item Element
+    .PARAMETER Title
+        Title, used for comment
+    .PARAMETER CardText
+        Text String of Data to be placed on the card.
     .EXAMPLE
-        New-ReportCard
+        Add-CardText -Title MyCardText -CardText "<someElement>SomeHTML Text</someElement>"
     .NOTES
         No notes at this time.
     #>
@@ -17,23 +17,23 @@ function New-ReportCard
         ConfirmImpact = "Low"
     )]
     [OutputType([String])]
-    [OutputType([boolean])]
+    [OutputType([Boolean])]
     param(
-        [Parameter()][String]$tbd01,
-        [Parameter()][String]$tbd02
+        [Parameter()][String]$Title,
+        [Parameter(Mandatory = $true)][String]$CardText
     )
-    if ($pscmdlet.ShouldProcess("Starting New-ReportCard function."))
+    if ($pscmdlet.ShouldProcess("Starting Add-CardText function."))
     {
-        try
+        # Determine if a title was specified
+        if ($Title)
         {
-            #Add Function details
+            $CardTextHtml = "<! Start $Title><p class='card-text'>$CardText</p>"
         }
-        catch
+        else
         {
-            $ErrorMessage = $_.Exception.Message
-            $FailedItem = $_.Exception.ItemName
-            Throw "New-ReportCard: $ErrorMessage $FailedItem"
+            $CardTextHtml = "<p class='card-text'>$CardText</p>"
         }
+        $CardTextHtml
     }
     else
     {
