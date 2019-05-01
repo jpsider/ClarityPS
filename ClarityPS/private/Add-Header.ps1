@@ -20,7 +20,7 @@ function Add-Header
     [OutputType([Boolean])]
     param(
         [Parameter()][String]$Title,
-        [Parameter()][String]$HeaderOption = "header-6"
+        [Parameter()][String]$HeaderOption = "header-3"
     )
     if ($pscmdlet.ShouldProcess("Starting Add-Header function."))
     {
