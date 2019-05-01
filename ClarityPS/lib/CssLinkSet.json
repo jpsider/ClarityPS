@@ -1,0 +1,16 @@
+[{
+    "URL": "https://unpkg.com/@clr/ui/clr-ui-dark.min.css",
+    "Title": "dark",
+    "RelType": "stylesheet"
+  },
+  {
+    "URL": "https://unpkg.com/@clr/ui/clr-ui.min.css",
+    "Title": "light",
+    "RelType": "alternate stylesheet"
+  },
+  {
+    "URL": "https://unpkg.com/clarity-icons/clarity-icons.min.css",
+    "Title": "Clarity",
+    "RelType": "stylesheet"
+  }
+]
