@@ -6,18 +6,18 @@ $sut = (Split-Path -Leaf $MyInvocation.MyCommand.Path) -replace '\.Tests\.', '.'
 
 Describe "Add-CardText function for $script:ModuleName" -Tags Build {
     It "Should return False if -WhatIf is used." {
-        Add-CardText -WhatIf | Should be $false
+        Add-CardText -Title MyCardText -CardText "<someElement>SomeHTML Text</someElement>" -WhatIf | Should be $false
     }
     It "Should not be null." {
-        Add-CardText | Should not be $null
+        Add-CardText -Title MyCardText -CardText "<someElement>SomeHTML Text</someElement>" | Should not be $null
     }
     It "Should be valid ClarityPS HTML." {
-        Add-CardText -Title MyCard | Should be ""
+        Add-CardText -Title MyCardText -CardText "<someElement>SomeHTML Text</someElement>" | Should be "<! Start MyCardText><p class='card-text'><someElement>SomeHTML Text</someElement></p>"
     }
     It "Should be valid ClarityPS HTML." {
-        Add-CardText | Should be ""
+        Add-CardText -CardText "<someElement>SomeHTML Text</someElement>" | Should be "<p class='card-text'><someElement>SomeHTML Text</someElement></p>"
     }
     It "Should not Throw" {
-        { Add-CardText } | Should not Throw
+        { Add-CardText -Title MyCardText -CardText "<someElement>SomeHTML Text</someElement>" } | Should not Throw
     }
 }
