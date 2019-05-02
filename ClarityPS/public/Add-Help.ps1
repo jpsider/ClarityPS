@@ -5,6 +5,8 @@ function Add-Help
         Adds Help Link with Cog Icon in the Header.
     .PARAMETER Title
         Title, used for comment
+    .PARAMETER URL
+        URL to help documents
     .EXAMPLE
         Add-Help -Title MyCard -URL "http://invoke-automation.blog"
     .NOTES

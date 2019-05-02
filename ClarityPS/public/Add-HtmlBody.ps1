@@ -5,6 +5,8 @@ function Add-HtmlBody
         Adds HTML Body Element
     .PARAMETER Title
         Title, used for comment
+    .PARAMETER HtmlBodyOption
+        Allows for Javascript options in the body element.
     .EXAMPLE
         Add-HtmlBody -Title MyCard -HtmlBodyOption "onload='set_style_from_cookie()'"
     .NOTES

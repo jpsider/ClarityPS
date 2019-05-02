@@ -5,6 +5,12 @@ function Add-CssLink
         Adds CSS Link Element
     .PARAMETER Title
         Title, used for comment
+    .PARAMETER URL
+        Provide a valid URL to remote or local CSS link.
+    .PARAMETER LinkTitle
+        Title for the link
+    .PARAMETER RelType
+        ex. stylesheet
     .EXAMPLE
         Add-CssLink -Title MyCard -URL "http://invoke-automation.blog" -LinkTitle "Invoke-Automation"
     .NOTES

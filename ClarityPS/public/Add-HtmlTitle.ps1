@@ -5,6 +5,8 @@ function Add-HtmlTitle
         Adds HTML Title Element for the Browser Tab.
     .PARAMETER Title
         Title, used for comment
+    .PARAMETER HtmlTitle
+        Title, used for HTML document
     .EXAMPLE
         Add-HtmlTitle -Title MyCard -HtmlTitle "MyHtmlDocument"
     .NOTES

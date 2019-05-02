@@ -11,6 +11,8 @@ function Add-HeaderNavLink
         Title of the link in the HTML doc (user facing)
     .PARAMETER NewTab
         Adds a property to open the link in a new tab.
+    .PARAMETER Active
+        Adds a property to highlight the link as active.
     .EXAMPLE
         Add-HeaderNavLink -Title MyCard -URL "http://invoke-automation.blog" -LinkTitle "Invoke-Automation" -NewTab
     .NOTES

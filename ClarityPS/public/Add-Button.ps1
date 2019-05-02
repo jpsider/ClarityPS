@@ -5,6 +5,18 @@ function Add-Button
         Adds Button Element
     .PARAMETER Title
         Title, used for comment
+    .PARAMETER Class
+        class to determine color
+    .PARAMETER ButtonText
+        Text of the Button
+    .PARAMETER ButtonValue
+        Value to identify the button
+    .PARAMETER ID
+        ID for Button Action
+    .PARAMETER Name
+        Reference name for button Action
+    .PARAMETER OnClick
+        Description of action to perform when pressed.
     .EXAMPLE
         Add-Button -Title MyCard -Class btn-success -OnClick '' -ButtonText MyButton -ButtonValue 'Button01' -ID 'thisButton' -Name 'Button001'
     .NOTES
