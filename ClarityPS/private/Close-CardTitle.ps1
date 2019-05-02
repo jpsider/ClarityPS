@@ -24,7 +24,7 @@ function Close-CardTitle
         # Determine if a title was specified
         if ($Title)
         {
-            $CardTitleHtml = "</h3><! End $Title>"
+            $CardTitleHtml = "</h3><!-- End $Title -->"
         }
         else
         {

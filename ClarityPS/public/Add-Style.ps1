@@ -1,12 +1,14 @@
-function Add-FlexItem
+function Add-Style
 {
     <#
     .DESCRIPTION
-        Adds Flex Item Element
+        Adds Style Element
     .PARAMETER Title
         Title, used for comment
+    .PARAMETER StyleText
+        Text for the CSS Style
     .EXAMPLE
-        Add-FlexItem -Title MyCard
+        Add-Style -Title MyCard -StyleText "Some CSS"
     .NOTES
         No notes at this time.
     #>
@@ -17,20 +19,21 @@ function Add-FlexItem
     [OutputType([String])]
     [OutputType([Boolean])]
     param(
-        [Parameter()][String]$Title
+        [Parameter()][String]$Title,
+        [Parameter(Mandatory = $true)][String]$StyleText
     )
-    if ($pscmdlet.ShouldProcess("Starting Add-FlexItem function."))
+    if ($pscmdlet.ShouldProcess("Starting Add-Style function."))
     {
         # Determine if a title was specified
         if ($Title)
         {
-            $FlexItemHtml = "<div class='flex-item'><! Start $Title>"
+            $StyleHtml = "<style>$StyleText<!-- Start $Title -->"
         }
         else
         {
-            $FlexItemHtml = "<div class='flex-item'>"
+            $StyleHtml = "<style>$StyleText"
         }
-        $FlexItemHtml
+        $StyleHtml
     }
     else
     {

@@ -24,7 +24,7 @@ function Close-MainContainer
         # Determine if a title was specified
         if ($Title)
         {
-            $MainContainerHtml = "</div><! End $Title>"
+            $MainContainerHtml = "</div><!-- End $Title -->"
         }
         else
         {

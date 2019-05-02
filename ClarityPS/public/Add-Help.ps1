@@ -5,6 +5,8 @@ function Add-Help
         Adds Help Link with Cog Icon in the Header.
     .PARAMETER Title
         Title, used for comment
+    .PARAMETER URL
+        URL to help documents
     .EXAMPLE
         Add-Help -Title MyCard -URL "http://invoke-automation.blog"
     .NOTES
@@ -18,14 +20,14 @@ function Add-Help
     [OutputType([Boolean])]
     param(
         [Parameter()][String]$Title,
-        [Parameter()][String]$URL
+        [Parameter(Mandatory = $true)][String]$URL
     )
     if ($pscmdlet.ShouldProcess("Starting Add-Help function."))
     {
         # Determine if a title was specified
         if ($Title)
         {
-            $HelpHtml = "<a href='$URL' class='nav-link nav-icon' target='_blank'><! Start $Title>"
+            $HelpHtml = "<a href='$URL' class='nav-link nav-icon' target='_blank'><!-- Start $Title -->"
         }
         else
         {

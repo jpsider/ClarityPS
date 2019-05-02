@@ -24,7 +24,7 @@ function Close-HtmlHead
         # Determine if a title was specified
         if ($Title)
         {
-            $HtmlHeadHtml = "</head><! End $Title>"
+            $HtmlHeadHtml = "</head><!-- End $Title -->"
         }
         else
         {

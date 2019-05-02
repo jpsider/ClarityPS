@@ -12,7 +12,7 @@ Describe "Close-FlexItem function for $script:ModuleName" -Tags Build {
         Close-FlexItem | Should not be $null
     }
     It "Should be valid ClarityPS HTML." {
-        Close-FlexItem -Title MyCard | Should be "</div><! End MyCard>"
+        Close-FlexItem -Title MyCard | Should be "</div><!-- End MyCard -->"
     }
     It "Should be valid ClarityPS HTML." {
         Close-FlexItem | Should be "</div>"

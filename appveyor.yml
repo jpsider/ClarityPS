@@ -1,8 +1,8 @@
 # See http://www.appveyor.com/docs/appveyor-yml for many more options
 
 environment:
-  #Coveralls_Key:
-    #secure: mOSiObC2c5LUU57K47frbcUotaYZC6ni0j/YxBHMrSMNxgsYzStPXxhwgXW6VJQy
+  Coveralls_Key:
+    secure: Nj5Q1oaWWjLSEzJP9kGHgS1pblyQPhVBR4O690HQ0/y+jGOMzDVSWoI4yf6Sq9w8
   NugetApiKey:
     secure: iR4vlP9ilby8LTXXncpzN5bwnE7pMBD5pHDDSfA7qnU+/N6RY1GSxMgb78gV104x
 

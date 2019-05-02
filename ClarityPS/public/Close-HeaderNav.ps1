@@ -24,7 +24,7 @@ function Close-HeaderNav
         # Determine if a title was specified
         if ($Title)
         {
-            $HeaderNavHtml = "</div><! End $Title>"
+            $HeaderNavHtml = "</div><!-- End $Title -->"
         }
         else
         {

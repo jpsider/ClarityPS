@@ -1,12 +1,14 @@
-function Add-FlexItem
+function Add-Script
 {
     <#
     .DESCRIPTION
-        Adds Flex Item Element
+        Adds Script Element
     .PARAMETER Title
         Title, used for comment
+    .PARAMETER ScriptText
+        Title, used for comment
     .EXAMPLE
-        Add-FlexItem -Title MyCard
+        Add-Script -Title MyCard -ScriptText "Some JavaScript"
     .NOTES
         No notes at this time.
     #>
@@ -17,20 +19,21 @@ function Add-FlexItem
     [OutputType([String])]
     [OutputType([Boolean])]
     param(
-        [Parameter()][String]$Title
+        [Parameter()][String]$Title,
+        [Parameter(Mandatory = $true)][String]$ScriptText
     )
-    if ($pscmdlet.ShouldProcess("Starting Add-FlexItem function."))
+    if ($pscmdlet.ShouldProcess("Starting Add-Script function."))
     {
         # Determine if a title was specified
         if ($Title)
         {
-            $FlexItemHtml = "<div class='flex-item'><! Start $Title>"
+            $ScriptHtml = "<script>$ScriptText<!-- Start $Title -->"
         }
         else
         {
-            $FlexItemHtml = "<div class='flex-item'>"
+            $ScriptHtml = "<script>$ScriptText"
         }
-        $FlexItemHtml
+        $ScriptHtml
     }
     else
     {

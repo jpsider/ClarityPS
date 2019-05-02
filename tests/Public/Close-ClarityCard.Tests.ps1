@@ -12,6 +12,6 @@ Describe "Close-ClarityCard function for $script:ModuleName" -Tags Build {
         Close-ClarityCard -Title TEST | Should not be $null
     }
     It "Should be proper ClarityPS HTML." {
-        Close-ClarityCard -Title TEST | Should be "</center></div></div></div><! End TEST Card>"
+        Close-ClarityCard -Title TEST | Should be "</center></div></div></div><!-- End TEST Card -->"
     }
 }

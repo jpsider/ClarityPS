@@ -24,7 +24,7 @@ function Close-FlexItem
         # Determine if a title was specified
         if ($Title)
         {
-            $FlexItemHtml = "</div><! End $Title>"
+            $FlexItemHtml = "</div><!-- End $Title -->"
         }
         else
         {

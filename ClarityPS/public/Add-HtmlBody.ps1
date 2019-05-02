@@ -5,8 +5,10 @@ function Add-HtmlBody
         Adds HTML Body Element
     .PARAMETER Title
         Title, used for comment
+    .PARAMETER HtmlBodyOption
+        Allows for Javascript options in the body element.
     .EXAMPLE
-        Add-HtmlBody -Title MyCard
+        Add-HtmlBody -Title MyCard -HtmlBodyOption "onload='set_style_from_cookie()'"
     .NOTES
         No notes at this time.
     #>
@@ -32,10 +34,10 @@ function Add-HtmlBody
         {
             # Nothing to add here.
         }
-        
+
         if ($Title)
         {
-            $HtmlBodyHtml += "><! Start $Title>"
+            $HtmlBodyHtml += "><!-- Start $Title -->"
         }
         else
         {

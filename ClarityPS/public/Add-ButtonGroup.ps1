@@ -24,7 +24,7 @@ function Add-ButtonGroup
         # Determine if a title was specified
         if ($Title)
         {
-            $ButtonGroupHtml = "<div class='btn-group'><! Start $Title>"
+            $ButtonGroupHtml = "<div class='btn-group'><!-- Start $Title -->"
         }
         else
         {

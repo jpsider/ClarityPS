@@ -5,8 +5,14 @@ function Add-CssLink
         Adds CSS Link Element
     .PARAMETER Title
         Title, used for comment
+    .PARAMETER URL
+        Provide a valid URL to remote or local CSS link.
+    .PARAMETER LinkTitle
+        Title for the link
+    .PARAMETER RelType
+        ex. stylesheet
     .EXAMPLE
-        Add-CssLink -Title MyCard
+        Add-CssLink -Title MyCard -URL "http://invoke-automation.blog" -LinkTitle "Invoke-Automation"
     .NOTES
         No notes at this time.
     #>
@@ -27,11 +33,11 @@ function Add-CssLink
         # Determine if a title was specified
         if ($Title)
         {
-            $CssLinkHtml = "<link rel='$RelType' href='$URL' title='$LinkTitle type='text/css' /><! Start $Title>"
+            $CssLinkHtml = "<link rel='$RelType' href='$URL' title='$LinkTitle' type='text/css' /><!-- Start $Title -->"
         }
         else
         {
-            $CssLinkHtml = "<link rel='$RelType' href='$URL' title='$LinkTitle type='text/css' />"
+            $CssLinkHtml = "<link rel='$RelType' href='$URL' title='$LinkTitle' type='text/css' />"
         }
         $CssLinkHtml
     }

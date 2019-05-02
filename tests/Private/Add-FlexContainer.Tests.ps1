@@ -12,7 +12,7 @@ Describe "Add-FlexContainer function for $script:ModuleName" -Tags Build {
         Add-FlexContainer | Should not be $null
     }
     It "Should be valid ClarityPS HTML." {
-        Add-FlexContainer -Title MyCard | Should be "<flex-container><! Start MyCard>"
+        Add-FlexContainer -Title MyCard | Should be "<flex-container><!-- Start MyCard -->"
     }
     It "Should be valid ClarityPS HTML." {
         Add-FlexContainer | Should be "<flex-container>"

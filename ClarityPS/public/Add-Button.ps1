@@ -5,6 +5,18 @@ function Add-Button
         Adds Button Element
     .PARAMETER Title
         Title, used for comment
+    .PARAMETER Class
+        class to determine color
+    .PARAMETER ButtonText
+        Text of the Button
+    .PARAMETER ButtonValue
+        Value to identify the button
+    .PARAMETER ID
+        ID for Button Action
+    .PARAMETER Name
+        Reference name for button Action
+    .PARAMETER OnClick
+        Description of action to perform when pressed.
     .EXAMPLE
         Add-Button -Title MyCard -Class btn-success -OnClick '' -ButtonText MyButton -ButtonValue 'Button01' -ID 'thisButton' -Name 'Button001'
     .NOTES
@@ -28,19 +40,18 @@ function Add-Button
     if ($pscmdlet.ShouldProcess("Starting Add-Button function."))
     {
         # Determine if a title was specified
-        $ButtonHtml = "<button class='$Class' type='button' onclick='$OnClick' name='$Name' value='$ButtonValue' id='$ID'"
+        $ButtonHtml = "<button class='$Class' type='button' name='$Name' value='$ButtonValue' id='$ID'"
         if ($OnClick)
         {
-            $ButtonHtml += $ButtonHtml + "onclick'$OnClick'" + ">$ButtonText"
+            $ButtonHtml += (" onclick='$OnClick'" + ">$ButtonText")
         }
         else
         {
-            $ButtonHtml += $ButtonHtml + ">$ButtonText"
+            $ButtonHtml += ">$ButtonText"
         }
-        
         if ($Title)
         {
-            $ButtonHtml += "<! Start $Title>"
+            $ButtonHtml += "<!-- Start $Title -->"
         }
         else
         {

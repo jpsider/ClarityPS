@@ -69,7 +69,10 @@
     # NestedModules = @()
 
     # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-    FunctionsToExport = '*'
+    FunctionsToExport = 'Add-Branding', 'Add-BrandingTitle', 'Add-Button', 'Add-ButtonGroup', 'Add-CardFooter', 'Add-CardText', 'Add-ClarityPSBody', 'Add-ClarityPSCookie', 'Add-ClarityPSHeader', 'Add-ClarityPSHeadSet', 'Add-ClarityPSIconSet', 'Add-ClarityPSLinkSet', 'Add-ClarityPSScriptSet',
+    'Add-ClarityPSStyleSet', 'Add-CssLink', 'Add-DocumentTitle', 'Add-HeaderAction', 'Add-HeaderNav', 'Add-HeaderNavLink', 'Add-Help', 'Add-HtmlBody', 'Add-HtmlHead', 'Add-HtmlTitle', 'Add-Icon', 'Add-Link',
+    'Add-MainContainer', 'Add-ProgressBlock', 'Add-Script', 'Add-ScriptLink', 'Add-Style', 'Close-Branding', 'Close-ButtonGroup', 'Close-ClarityCard', 'Close-ClarityCardBody', 'Close-ClarityDocument',
+    'Close-Header', 'Close-HeaderAction', 'Close-HeaderNav', 'Close-HtmlBody', 'Close-HtmlDocument', 'Close-HtmlHead', 'Close-MainContainer', 'New-ClarityCard', 'New-ClarityDocument', 'New-HtmlDocument'
 
     # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
     #CmdletsToExport = '*'

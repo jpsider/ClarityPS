@@ -12,7 +12,7 @@ Describe "Add-CardBlock function for $script:ModuleName" -Tags Build {
         Add-CardBlock | Should not be $null
     }
     It "Should be valid ClarityPS HTML." {
-        Add-CardBlock -Title MyCard | Should be "<div class='card-block'><! Start MyCard>"
+        Add-CardBlock -Title MyCard | Should be "<div class='card-block'><!-- Start MyCard -->"
     }
     It "Should be valid ClarityPS HTML." {
         Add-CardBlock | Should be "<div class='card-block'>"

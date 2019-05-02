@@ -24,7 +24,7 @@ function Add-FlexContainer
         # Determine if a title was specified
         if ($Title)
         {
-            $FlexContainerHtml = "<flex-container><! Start $Title>"
+            $FlexContainerHtml = "<flex-container><!-- Start $Title -->"
         }
         else
         {

@@ -24,7 +24,7 @@ function Add-Card
         # Determine if a title was specified
         if ($Title)
         {
-            $CardClassHtml = "<div class='card'><! Start $Title>"
+            $CardClassHtml = "<div class='card'><!-- Start $Title -->"
         }
         else
         {

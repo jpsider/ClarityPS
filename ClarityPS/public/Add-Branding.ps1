@@ -24,7 +24,7 @@ function Add-Branding
         # Determine if a title was specified
         if ($Title)
         {
-            $BrandingHtml = "<div class='branding'><! Start $Title>"
+            $BrandingHtml = "<div class='branding'><!-- Start $Title -->"
         }
         else
         {

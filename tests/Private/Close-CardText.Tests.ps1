@@ -12,7 +12,7 @@ Describe "Close-CardText function for $script:ModuleName" -Tags Build {
         Close-CardText | Should not be $null
     }
     It "Should be valid ClarityPS HTML." {
-        Close-CardText -Title MyCard | Should be "</div><! End MyCard>"
+        Close-CardText -Title MyCard | Should be "</div><!-- End MyCard -->"
     }
     It "Should be valid ClarityPS HTML." {
         Close-CardText | Should be "</div>"

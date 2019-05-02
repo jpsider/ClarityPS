@@ -1,12 +1,12 @@
-function Add-FlexItem
+function Add-MainContainer
 {
     <#
     .DESCRIPTION
-        Adds Flex Item Element
+        Adds Main-Container Element
     .PARAMETER Title
         Title, used for comment
     .EXAMPLE
-        Add-FlexItem -Title MyCard
+        Add-MainContainer -Title MyCard
     .NOTES
         No notes at this time.
     #>
@@ -19,18 +19,18 @@ function Add-FlexItem
     param(
         [Parameter()][String]$Title
     )
-    if ($pscmdlet.ShouldProcess("Starting Add-FlexItem function."))
+    if ($pscmdlet.ShouldProcess("Starting Add-MainContainer function."))
     {
         # Determine if a title was specified
         if ($Title)
         {
-            $FlexItemHtml = "<div class='flex-item'><! Start $Title>"
+            $MainContainerHtml = "<div class='main-container'><!-- Start $Title -->"
         }
         else
         {
-            $FlexItemHtml = "<div class='flex-item'>"
+            $MainContainerHtml = "<div class='main-container'>"
         }
-        $FlexItemHtml
+        $MainContainerHtml
     }
     else
     {

@@ -20,14 +20,14 @@ function Add-Header
     [OutputType([Boolean])]
     param(
         [Parameter()][String]$Title,
-        [Parameter()][String]$HeaderOption = "header-6"
+        [Parameter()][String]$HeaderOption = "header-3"
     )
     if ($pscmdlet.ShouldProcess("Starting Add-Header function."))
     {
         # Determine if a title was specified
         if ($Title)
         {
-            $HeaderHtml = "<header class='header $HeaderOption'><! Start $Title>"
+            $HeaderHtml = "<header class='header $HeaderOption'><!-- Start $Title -->"
         }
         else
         {

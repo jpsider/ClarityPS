@@ -4,12 +4,20 @@ $here = (Split-Path -Parent $MyInvocation.MyCommand.Path) -replace 'tests', "$sc
 $sut = (Split-Path -Leaf $MyInvocation.MyCommand.Path) -replace '\.Tests\.', '.'
 . "$here\$sut"
 
-Describe "New-ReportCard function for $script:ModuleName" -Tags Build
-{
+Describe "New-HtmlDocument function for $script:ModuleName" -Tags Build {
     It "Should return False if -WhatIf is used." {
-        New-ReportCard -WhatIf | Should be $false
+        New-HtmlDocument -WhatIf | Should be $false
     }
-    It "Should Return true." {
-        New-ReportCard | Should be $true
+    It "Should not be null." {
+        New-HtmlDocument -Title ClarityPSDocument | Should not be $null
+    }
+    It "Should be valid ClarityPS HTML." {
+        New-HtmlDocument -Title ClarityPSDocument | Should be "<!DOCTYPE html><html lang='en'><!-- Start ClarityPSDocument -->"
+    }
+    It "Should be valid ClarityPS HTML." {
+        New-HtmlDocument | Should be "<!DOCTYPE html><html lang='en'>"
+    }
+    It "Should not Throw" {
+        { New-HtmlDocument -Title ClarityPSDocument } | Should not Throw
     }
 }
