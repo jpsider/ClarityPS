@@ -21,7 +21,7 @@ function Add-ClarityPSCookie
     )
     if ($pscmdlet.ShouldProcess("Starting Add-ClarityPSCookie function."))
     {
-        # Determine the Module Path 
+        # Determine the Module Path
         $SourceModulePath = (Split-Path -Path (Get-Module -ListAvailable ClarityPS | Sort-Object -Property Version -Descending | Select-Object -First 1).path)
         $ScriptPath = "$SourceModulePath\lib\cookie.js"
         $CookieScript = Get-Content -Path $ScriptPath

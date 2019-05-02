@@ -10,7 +10,7 @@ function New-ClarityDocument
     .PARAMETER IconSize
         Size of the Icon.
     .EXAMPLE
-        New-ClarityDocument -Title Storage 
+        New-ClarityDocument -Title Storage
     .NOTES
         No notes at this time.
     #>

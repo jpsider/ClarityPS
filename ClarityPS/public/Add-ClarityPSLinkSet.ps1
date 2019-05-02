@@ -31,7 +31,7 @@ function Add-ClarityPSLinkSet
                 $CssURL = $CSSLink.URL
                 $CssTitle = $CSSLink.Title
                 $RelType = $CSSLink.RelType
-                $ClarityPSLinkSetHtml += Add-CssLink -URL "$CssURL" -LinkTitle "$CssTitle" -RelType $RelType 
+                $ClarityPSLinkSetHtml += Add-CssLink -URL "$CssURL" -LinkTitle "$CssTitle" -RelType $RelType
             }
             $ClarityPSLinkSetHtml
         }

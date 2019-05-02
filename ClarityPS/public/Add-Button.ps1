@@ -37,7 +37,6 @@ function Add-Button
         {
             $ButtonHtml += ">$ButtonText"
         }
-        
         if ($Title)
         {
             $ButtonHtml += "<! Start $Title>"

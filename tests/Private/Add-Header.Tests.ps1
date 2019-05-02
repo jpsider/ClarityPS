@@ -15,7 +15,7 @@ Describe "Add-Header function for $script:ModuleName" -Tags Build {
         Add-Header -Title MyCard -HeaderOption Header-6 | Should be "<header class='header Header-6'><! Start MyCard>"
     }
     It "Should be valid ClarityPS HTML." {
-        Add-Header | Should be "<header class='header Header-6'>"
+        Add-Header | Should be "<header class='header Header-3'>"
     }
     It "Should not Throw" {
         { Add-Header } | Should not Throw

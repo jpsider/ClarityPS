@@ -40,7 +40,7 @@ function Add-HeaderNavLink
         {
             $class = "class='nav-link nav-text'"
         }
- 
+
         $LinkHtml += $class
         $LinkHtml += ">$LinkTitle"
         $LinkHtml
