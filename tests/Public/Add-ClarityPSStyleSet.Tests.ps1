@@ -29,7 +29,7 @@ Describe "Add-ClarityPSStyleSet function for $script:ModuleName" -Tags Build {
         Mock -CommandName 'Add-Style' -MockWith {
             return "<style>CssText; Looks Great!"
         }
-        Mock -CommandName 'Add-Style' -MockWith {
+        Mock -CommandName 'Close-Style' -MockWith {
             return "</style>"
         }
         Add-ClarityPSStyleSet | Should not be $null
