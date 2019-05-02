@@ -24,7 +24,7 @@ function Add-FlexItem
         # Determine if a title was specified
         if ($Title)
         {
-            $FlexItemHtml = "<div class='flex-item'><! Start $Title>"
+            $FlexItemHtml = "<div class='flex-item'><!-- Start $Title -->"
         }
         else
         {

@@ -27,7 +27,7 @@ function Add-CardText
         # Determine if a title was specified
         if ($Title)
         {
-            $CardTextHtml = "<! Start $Title><p class='card-text'>$CardText</p>"
+            $CardTextHtml = "<!-- Start $Title --><p class='card-text'>$CardText</p>"
         }
         else
         {

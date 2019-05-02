@@ -12,7 +12,7 @@ Describe "Close-ButtonGroup function for $script:ModuleName" -Tags Build {
         Close-ButtonGroup | Should not be $null
     }
     It "Should be valid ClarityPS HTML." {
-        Close-ButtonGroup -Title MyCard | Should be "</div><! End MyCard>"
+        Close-ButtonGroup -Title MyCard | Should be "</div><!-- End MyCard -->"
     }
     It "Should be valid ClarityPS HTML." {
         Close-ButtonGroup | Should be "</div>"

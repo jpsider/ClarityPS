@@ -12,7 +12,7 @@ Describe "Add-ButtonGroup function for $script:ModuleName" -Tags Build {
         Add-ButtonGroup | Should not be $null
     }
     It "Should be valid ClarityPS HTML." {
-        Add-ButtonGroup -Title MyCard | Should be "<div class='btn-group'><! Start MyCard>"
+        Add-ButtonGroup -Title MyCard | Should be "<div class='btn-group'><!-- Start MyCard -->"
     }
     It "Should be valid ClarityPS HTML." {
         Add-ButtonGroup | Should be "<div class='btn-group'>"

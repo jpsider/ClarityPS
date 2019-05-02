@@ -12,7 +12,7 @@ Describe "Add-FlexItem function for $script:ModuleName" -Tags Build {
         Add-FlexItem | Should not be $null
     }
     It "Should be valid ClarityPS HTML." {
-        Add-FlexItem -Title MyCard | Should be "<div class='flex-item'><! Start MyCard>"
+        Add-FlexItem -Title MyCard | Should be "<div class='flex-item'><!-- Start MyCard -->"
     }
     It "Should be valid ClarityPS HTML." {
         Add-FlexItem | Should be "<div class='flex-item'>"

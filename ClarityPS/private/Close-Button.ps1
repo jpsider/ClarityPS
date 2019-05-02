@@ -24,7 +24,7 @@ function Close-Button
         # Determine if a title was specified
         if ($Title)
         {
-            $ButtonHtml = "</button><! End $Title>"
+            $ButtonHtml = "</button><!-- End $Title -->"
         }
         else
         {

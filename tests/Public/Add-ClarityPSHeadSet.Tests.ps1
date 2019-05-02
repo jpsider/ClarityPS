@@ -8,8 +8,9 @@ function Add-HtmlHead { }
 function Add-ClarityPSLinkSet { }
 function Add-ClarityPSScriptSet { }
 function Add-ClarityPSStyleSet { }
-function Add-ClarityIconSet { }
+function Add-ClarityPSIconSet { }
 function Add-HtmlTitle { }
+function Close-HtmlTitle { }
 function Close-HtmlHead { }
 
 Describe "Add-ClarityPSHeadSet function for $script:ModuleName" -Tags Build {
@@ -26,11 +27,14 @@ Describe "Add-ClarityPSHeadSet function for $script:ModuleName" -Tags Build {
         Mock -CommandName 'Add-ClarityPSStyleSet' -MockWith {
             return "<style>Fancy Style</style>"
         }
-        Mock -CommandName 'Add-ClarityIconSet' -MockWith {
+        Mock -CommandName 'Add-ClarityPSIconSet' -MockWith {
             return "<script>ForIcons</script>"
         }
         Mock -CommandName 'Add-HtmlTitle' -MockWith {
             return "<h3>FancyTitle</h3></br></br>"
+        }
+        Mock -CommandName 'Close-HtmlTitle' -MockWith {
+            return "</title>"
         }
         Mock -CommandName 'Close-HtmlHead' -MockWith {
             return "</head>"
@@ -50,11 +54,14 @@ Describe "Add-ClarityPSHeadSet function for $script:ModuleName" -Tags Build {
         Mock -CommandName 'Add-ClarityPSStyleSet' -MockWith {
             return "<style>Fancy Style</style>"
         }
-        Mock -CommandName 'Add-ClarityIconSet' -MockWith {
+        Mock -CommandName 'Add-ClarityPSIconSet' -MockWith {
             return "<script>ForIcons</script>"
         }
         Mock -CommandName 'Add-HtmlTitle' -MockWith {
             return "<h3>FancyTitle</h3></br></br>"
+        }
+        Mock -CommandName 'Close-HtmlTitle' -MockWith {
+            return "</title>"
         }
         Mock -CommandName 'Close-HtmlHead' -MockWith {
             return "</head>"
@@ -74,16 +81,19 @@ Describe "Add-ClarityPSHeadSet function for $script:ModuleName" -Tags Build {
         Mock -CommandName 'Add-ClarityPSStyleSet' -MockWith {
             return "<style>Fancy Style</style>"
         }
-        Mock -CommandName 'Add-ClarityIconSet' -MockWith {
+        Mock -CommandName 'Add-ClarityPSIconSet' -MockWith {
             return "<script>ForIcons</script>"
         }
         Mock -CommandName 'Add-HtmlTitle' -MockWith {
             return "<h3>FancyTitle</h3></br></br>"
         }
+        Mock -CommandName 'Close-HtmlTitle' -MockWith {
+            return "</title>"
+        }
         Mock -CommandName 'Close-HtmlHead' -MockWith {
             return "</head>"
         }
-        Add-ClarityPSHeadSet -Title MyCard | Should be "<head><link src='somelink' /><script>someScript</script><style>Fancy Style</style><script>ForIcons</script><h3>FancyTitle</h3></br></br></head>"
+        Add-ClarityPSHeadSet -Title MyCard | Should be "<head><link src='somelink' /><script>someScript</script><style>Fancy Style</style><script>ForIcons</script><h3>FancyTitle</h3></br></br></title></head>"
     }
     It "Should not Throw" {
         Mock -CommandName 'Add-HtmlHead' -MockWith {
@@ -98,11 +108,14 @@ Describe "Add-ClarityPSHeadSet function for $script:ModuleName" -Tags Build {
         Mock -CommandName 'Add-ClarityPSStyleSet' -MockWith {
             return "<style>Fancy Style</style>"
         }
-        Mock -CommandName 'Add-ClarityIconSet' -MockWith {
+        Mock -CommandName 'Add-ClarityPSIconSet' -MockWith {
             return "<script>ForIcons</script>"
         }
         Mock -CommandName 'Add-HtmlTitle' -MockWith {
             return "<h3>FancyTitle</h3></br></br>"
+        }
+        Mock -CommandName 'Close-HtmlTitle' -MockWith {
+            return "</title>"
         }
         Mock -CommandName 'Close-HtmlHead' -MockWith {
             return "</head>"
@@ -122,11 +135,14 @@ Describe "Add-ClarityPSHeadSet function for $script:ModuleName" -Tags Build {
         Mock -CommandName 'Add-ClarityPSStyleSet' -MockWith {
             return "<style>Fancy Style</style>"
         }
-        Mock -CommandName 'Add-ClarityIconSet' -MockWith {
+        Mock -CommandName 'Add-ClarityPSIconSet' -MockWith {
             return "<script>ForIcons</script>"
         }
         Mock -CommandName 'Add-HtmlTitle' -MockWith {
             return "<h3>FancyTitle</h3></br></br>"
+        }
+        Mock -CommandName 'Close-HtmlTitle' -MockWith {
+            return "</title>"
         }
         Mock -CommandName 'Close-HtmlHead' -MockWith {
             return "</head>"
@@ -146,11 +162,14 @@ Describe "Add-ClarityPSHeadSet function for $script:ModuleName" -Tags Build {
         Mock -CommandName 'Add-ClarityPSStyleSet' -MockWith {
             return "<style>Fancy Style</style>"
         }
-        Mock -CommandName 'Add-ClarityIconSet' -MockWith {
+        Mock -CommandName 'Add-ClarityPSIconSet' -MockWith {
             return "<script>ForIcons</script>"
         }
         Mock -CommandName 'Add-HtmlTitle' -MockWith {
             return "<h3>FancyTitle</h3></br></br>"
+        }
+        Mock -CommandName 'Close-HtmlTitle' -MockWith {
+            return "</title>"
         }
         Mock -CommandName 'Close-HtmlHead' -MockWith {
             return "</head>"
@@ -170,11 +189,14 @@ Describe "Add-ClarityPSHeadSet function for $script:ModuleName" -Tags Build {
         Mock -CommandName 'Add-ClarityPSStyleSet' -MockWith {
             return "<style>Fancy Style</style>"
         }
-        Mock -CommandName 'Add-ClarityIconSet' -MockWith {
+        Mock -CommandName 'Add-ClarityPSIconSet' -MockWith {
             return "<script>ForIcons</script>"
         }
         Mock -CommandName 'Add-HtmlTitle' -MockWith {
             return "<h3>FancyTitle</h3></br></br>"
+        }
+        Mock -CommandName 'Close-HtmlTitle' -MockWith {
+            return "</title>"
         }
         Mock -CommandName 'Close-HtmlHead' -MockWith {
             return "</head>"
@@ -194,18 +216,21 @@ Describe "Add-ClarityPSHeadSet function for $script:ModuleName" -Tags Build {
         Mock -CommandName 'Add-ClarityPSStyleSet' -MockWith {
             Throw "Add-ClarityPSScriptStyleSet failed."
         }
-        Mock -CommandName 'Add-ClarityIconSet' -MockWith {
+        Mock -CommandName 'Add-ClarityPSIconSet' -MockWith {
             return "<script>ForIcons</script>"
         }
         Mock -CommandName 'Add-HtmlTitle' -MockWith {
             return "<h3>FancyTitle</h3></br></br>"
+        }
+        Mock -CommandName 'Close-HtmlTitle' -MockWith {
+            return "</title>"
         }
         Mock -CommandName 'Close-HtmlHead' -MockWith {
             return "</head>"
         }
         { Add-ClarityPSHeadSet } | Should Throw
     }
-    It "Should Throw when Add-ClarityIconSet Fails." {
+    It "Should Throw when Add-ClarityPSIconSet Fails." {
         Mock -CommandName 'Add-HtmlHead' -MockWith {
             return "<head>"
         }
@@ -218,11 +243,14 @@ Describe "Add-ClarityPSHeadSet function for $script:ModuleName" -Tags Build {
         Mock -CommandName 'Add-ClarityPSStyleSet' -MockWith {
             return "<style>Fancy Style</style>"
         }
-        Mock -CommandName 'Add-ClarityIconSet' -MockWith {
-            Throw "Add-ClarityIconSet Failed"
+        Mock -CommandName 'Add-ClarityPSIconSet' -MockWith {
+            Throw "Add-ClarityPSIconSet Failed"
         }
         Mock -CommandName 'Add-HtmlTitle' -MockWith {
             return "<h3>FancyTitle</h3></br></br>"
+        }
+        Mock -CommandName 'Close-HtmlTitle' -MockWith {
+            return "</title>"
         }
         Mock -CommandName 'Close-HtmlHead' -MockWith {
             return "</head>"
@@ -242,11 +270,14 @@ Describe "Add-ClarityPSHeadSet function for $script:ModuleName" -Tags Build {
         Mock -CommandName 'Add-ClarityPSStyleSet' -MockWith {
             return "<style>Fancy Style</style>"
         }
-        Mock -CommandName 'Add-ClarityIconSet' -MockWith {
+        Mock -CommandName 'Add-ClarityPSIconSet' -MockWith {
             return "<script>ForIcons</script>"
         }
         Mock -CommandName 'Add-HtmlTitle' -MockWith {
             Throw "Add-HtmlTitle failed."
+        }
+        Mock -CommandName 'Close-HtmlTitle' -MockWith {
+            return "</title>"
         }
         Mock -CommandName 'Close-HtmlHead' -MockWith {
             return "</head>"
@@ -266,11 +297,41 @@ Describe "Add-ClarityPSHeadSet function for $script:ModuleName" -Tags Build {
         Mock -CommandName 'Add-ClarityPSStyleSet' -MockWith {
             return "<style>Fancy Style</style>"
         }
-        Mock -CommandName 'Add-ClarityIconSet' -MockWith {
+        Mock -CommandName 'Add-ClarityPSIconSet' -MockWith {
             return "<script>ForIcons</script>"
         }
         Mock -CommandName 'Add-HtmlTitle' -MockWith {
             return "<h3>FancyTitle</h3></br></br>"
+        }
+        Mock -CommandName 'Close-HtmlTitle' -MockWith {
+            Throw "Close-HtmlTitle Failed"
+        }
+        Mock -CommandName 'Close-HtmlHead' -MockWith {
+            return "</head>"
+        }
+        { Add-ClarityPSHeadSet } | Should Throw
+    }
+    It "Should Throw when Close-HtmlHead Fails." {
+        Mock -CommandName 'Add-HtmlHead' -MockWith {
+            return "<head>"
+        }
+        Mock -CommandName 'Add-ClarityPSLinkSet' -MockWith {
+            return "<link src='somelink' />"
+        }
+        Mock -CommandName 'Add-ClarityPSScriptSet' -MockWith {
+            return "<script>someScript</script>"
+        }
+        Mock -CommandName 'Add-ClarityPSStyleSet' -MockWith {
+            return "<style>Fancy Style</style>"
+        }
+        Mock -CommandName 'Add-ClarityPSIconSet' -MockWith {
+            return "<script>ForIcons</script>"
+        }
+        Mock -CommandName 'Add-HtmlTitle' -MockWith {
+            return "<h3>FancyTitle</h3></br></br>"
+        }
+        Mock -CommandName 'Close-HtmlTitle' -MockWith {
+            return "</title>"
         }
         Mock -CommandName 'Close-HtmlHead' -MockWith {
             Throw "Close-HtmlHead Failed"

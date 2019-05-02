@@ -24,7 +24,7 @@ function Close-HtmlDocument
         # Determine if a title was specified
         if ($Title)
         {
-            $HtmlDocumentHtml = "</html><! End $Title>"
+            $HtmlDocumentHtml = "</html><!-- End $Title -->"
         }
         else
         {

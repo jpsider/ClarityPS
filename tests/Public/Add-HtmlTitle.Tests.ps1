@@ -12,7 +12,7 @@ Describe "Add-HtmlTitle function for $script:ModuleName" -Tags Build {
         Add-HtmlTitle | Should not be $null
     }
     It "Should be valid ClarityPS HTML." {
-        Add-HtmlTitle -Title MyCard -HtmlTitle "MyHtmlDocument" | Should be "<title>MyHtmlDocument<! Start MyCard>"
+        Add-HtmlTitle -Title MyCard -HtmlTitle "MyHtmlDocument" | Should be "<!-- Start MyCard --><title>MyHtmlDocument"
     }
     It "Should be valid ClarityPS HTML." {
         Add-HtmlTitle -HtmlTitle "MyHtmlDocument" | Should be "<title>MyHtmlDocument"

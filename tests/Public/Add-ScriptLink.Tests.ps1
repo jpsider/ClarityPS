@@ -12,10 +12,10 @@ Describe "Add-ScriptLink function for $script:ModuleName" -Tags Build {
         Add-ScriptLink | Should not be $null
     }
     It "Should be valid ClarityPS HTML." {
-        Add-ScriptLink -Title MyCard -SourceLink "https://unpkg.com/clarity-icons/clarity-icons.min.js" | Should be "<script src='https://unpkg.com/clarity-icons/clarity-icons.min.js'></script><! Start MyCard>"
+        Add-ScriptLink -Title MyCard -SourceLink "https://unpkg.com/clarity-icons/clarity-icons.min.js" | Should be "<script src='https://unpkg.com/clarity-icons/clarity-icons.min.js'><!-- Start MyCard -->"
     }
     It "Should be valid ClarityPS HTML." {
-        Add-ScriptLink -SourceLink "https://unpkg.com/clarity-icons/clarity-icons.min.js" | Should be "<script src='https://unpkg.com/clarity-icons/clarity-icons.min.js'></script>"
+        Add-ScriptLink -SourceLink "https://unpkg.com/clarity-icons/clarity-icons.min.js" | Should be "<script src='https://unpkg.com/clarity-icons/clarity-icons.min.js'>"
     }
     It "Should not Throw" {
         { Add-ScriptLink } | Should not Throw

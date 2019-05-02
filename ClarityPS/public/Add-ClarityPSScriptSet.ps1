@@ -29,7 +29,7 @@ function Add-ClarityPSScriptSet
             foreach ($JSScript in $JSScriptList)
             {
                 $JSScriptURL = $JSScript.URL
-                $ClarityPSScriptSetHtml += Add-Script -ScriptText "$JSScriptURL"
+                $ClarityPSScriptSetHtml += Add-ScriptLink -SourceLink "$JSScriptURL"
                 $ClarityPSScriptSetHtml += Close-Script
             }
             $ClarityPSScriptSetHtml

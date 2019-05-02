@@ -27,7 +27,7 @@ function Add-Header
         # Determine if a title was specified
         if ($Title)
         {
-            $HeaderHtml = "<header class='header $HeaderOption'><! Start $Title>"
+            $HeaderHtml = "<header class='header $HeaderOption'><!-- Start $Title -->"
         }
         else
         {

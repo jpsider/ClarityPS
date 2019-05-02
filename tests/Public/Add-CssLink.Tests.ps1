@@ -12,10 +12,10 @@ Describe "Add-CssLink function for $script:ModuleName" -Tags Build {
         Add-CssLink -URL "http://invoke-automation.blog" -LinkTitle "Invoke-Automation" | Should not be $null
     }
     It "Should be valid ClarityPS HTML." {
-        Add-CssLink -Title MyCard -URL "http://invoke-automation.blog" -LinkTitle "Invoke-Automation" | Should be "<link rel='stylesheet' href='http://invoke-automation.blog' title='Invoke-Automation type='text/css' /><! Start MyCard>"
+        Add-CssLink -Title MyCard -URL "http://invoke-automation.blog" -LinkTitle "Invoke-Automation" | Should be "<link rel='stylesheet' href='http://invoke-automation.blog' title='Invoke-Automation' type='text/css' /><!-- Start MyCard -->"
     }
     It "Should be valid ClarityPS HTML." {
-        Add-CssLink -URL "http://invoke-automation.blog" -LinkTitle "Invoke-Automation" | Should be "<link rel='stylesheet' href='http://invoke-automation.blog' title='Invoke-Automation type='text/css' />"
+        Add-CssLink -URL "http://invoke-automation.blog" -LinkTitle "Invoke-Automation" | Should be "<link rel='stylesheet' href='http://invoke-automation.blog' title='Invoke-Automation' type='text/css' />"
     }
     It "Should not Throw" {
         { Add-CssLink -URL "http://invoke-automation.blog" -LinkTitle "Invoke-Automation" } | Should not Throw

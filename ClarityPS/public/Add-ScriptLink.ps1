@@ -27,11 +27,11 @@ function Add-ScriptLink
         # Determine if a title was specified
         if ($Title)
         {
-            $ScriptLinkHtml = "<script src='$SourceLink'></script><! Start $Title>"
+            $ScriptLinkHtml = "<script src='$SourceLink'><!-- Start $Title -->"
         }
         else
         {
-            $ScriptLinkHtml = "<script src='$SourceLink'></script>"
+            $ScriptLinkHtml = "<script src='$SourceLink'>"
         }
         $ScriptLinkHtml
     }

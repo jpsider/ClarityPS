@@ -12,7 +12,7 @@ Describe "Close-HtmlBody function for $script:ModuleName" -Tags Build {
         Close-HtmlBody | Should not be $null
     }
     It "Should be valid ClarityPS HTML." {
-        Close-HtmlBody -Title MyCard | Should be "</body><! End MyCard>"
+        Close-HtmlBody -Title MyCard | Should be "</body><!-- End MyCard -->"
     }
     It "Should be valid ClarityPS HTML." {
         Close-HtmlBody | Should be "</body>"

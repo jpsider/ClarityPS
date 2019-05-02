@@ -24,7 +24,7 @@ function Close-HtmlBody
         # Determine if a title was specified
         if ($Title)
         {
-            $HtmlBodyHtml = "</body><! End $Title>"
+            $HtmlBodyHtml = "</body><!-- End $Title -->"
         }
         else
         {

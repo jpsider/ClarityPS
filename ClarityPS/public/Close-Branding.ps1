@@ -24,7 +24,7 @@ function Close-Branding
         # Determine if a title was specified
         if ($Title)
         {
-            $BrandingHtml = "</div><! End $Title>"
+            $BrandingHtml = "</div><!-- End $Title -->"
         }
         else
         {

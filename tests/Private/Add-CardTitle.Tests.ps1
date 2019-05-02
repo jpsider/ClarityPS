@@ -12,7 +12,7 @@ Describe "Add-CardTitle function for $script:ModuleName" -Tags Build {
         Add-CardTitle | Should not be $null
     }
     It "Should be valid ClarityPS HTML." {
-        Add-CardTitle -Title MyCard | Should be "<h3 class='card-title'><! Start MyCard>"
+        Add-CardTitle -Title MyCard | Should be "<h3 class='card-title'><!-- Start MyCard -->"
     }
     It "Should be valid ClarityPS HTML." {
         Add-CardTitle | Should be "<h3 class='card-title'>"

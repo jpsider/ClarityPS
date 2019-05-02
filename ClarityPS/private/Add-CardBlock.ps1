@@ -24,7 +24,7 @@ function Add-CardBlock
         # Determine if a title was specified
         if ($Title)
         {
-            $CardBlockHtml = "<div class='card-block'><! Start $Title>"
+            $CardBlockHtml = "<div class='card-block'><!-- Start $Title -->"
         }
         else
         {

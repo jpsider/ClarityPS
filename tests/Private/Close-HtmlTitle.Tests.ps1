@@ -12,7 +12,7 @@ Describe "Close-HtmlTitle function for $script:ModuleName" -Tags Build {
         Close-HtmlTitle | Should not be $null
     }
     It "Should be valid ClarityPS HTML." {
-        Close-HtmlTitle -Title MyCard | Should be "</title><! End MyCard>"
+        Close-HtmlTitle -Title MyCard | Should be "</title><!-- End MyCard -->"
     }
     It "Should be valid ClarityPS HTML." {
         Close-HtmlTitle | Should be "</title>"

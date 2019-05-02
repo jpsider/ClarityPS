@@ -14,7 +14,7 @@ $RawReturn = @(
 $ReturnJson = $RawReturn | ConvertTo-Json
 $ReturnData = $ReturnJson | convertfrom-json
 $cookieData = "Lots of JavaScript"
-$AddScriptText = "<script>Lots of JavaScript<! Start ClarityCookieMgmtScript>"
+$AddScriptText = "<script>Lots of JavaScript<!-- Start ClarityCookieMgmtScript -->"
 Describe "Add-ClarityPSCookie function for $script:ModuleName" -Tags Build {
     It "Should return False if -WhatIf is used." {
         Mock -CommandName 'Get-Module' -MockWith {
@@ -50,7 +50,7 @@ Describe "Add-ClarityPSCookie function for $script:ModuleName" -Tags Build {
         Mock -CommandName 'Add-Script' -MockWith {
             return $AddScriptText
         }
-        Add-ClarityPSCookie -Title ClarityCookieMgmtScript | Should be "<script>Lots of JavaScript<! Start ClarityCookieMgmtScript>"
+        Add-ClarityPSCookie -Title ClarityCookieMgmtScript | Should be "<script>Lots of JavaScript<!-- Start ClarityCookieMgmtScript -->"
     }
     It "Should be valid ClarityPS HTML." {
         Mock -CommandName 'Get-Module' -MockWith {
@@ -62,7 +62,7 @@ Describe "Add-ClarityPSCookie function for $script:ModuleName" -Tags Build {
         Mock -CommandName 'Add-Script' -MockWith {
             return $AddScriptText
         }
-        Add-ClarityPSCookie | Should be "<script>Lots of JavaScript<! Start ClarityCookieMgmtScript>"
+        Add-ClarityPSCookie | Should be "<script>Lots of JavaScript<!-- Start ClarityCookieMgmtScript -->"
     }
     It "Should not Throw" {
         Mock -CommandName 'Get-Module' -MockWith {

@@ -5,7 +5,7 @@ $sut = (Split-Path -Leaf $MyInvocation.MyCommand.Path) -replace '\.Tests\.', '.'
 . "$here\$sut"
 function Get-Module { }
 function Get-Content { }
-function Add-Script { }
+function Add-ScriptLink { }
 function Close-Script { }
 $RawReturn = @(
     @{
@@ -25,7 +25,7 @@ Describe "Add-ClarityPSScriptSet function for $script:ModuleName" -Tags Build {
         Mock -CommandName 'Get-Content' -MockWith {
             return $ReturnJson
         }
-        Mock -CommandName 'Add-Script' -MockWith {
+        Mock -CommandName 'Add-ScriptLink' -MockWith {
             return "<script>Several Scriptblocks for JavaScript imports"
         }
         Mock -CommandName 'Close-Script' -MockWith {
@@ -40,7 +40,7 @@ Describe "Add-ClarityPSScriptSet function for $script:ModuleName" -Tags Build {
         Mock -CommandName 'Get-Content' -MockWith {
             return $ReturnJson
         }
-        Mock -CommandName 'Add-Script' -MockWith {
+        Mock -CommandName 'Add-ScriptLink' -MockWith {
             return "<script>Several Scriptblocks for JavaScript imports"
         }
         Mock -CommandName 'Close-Script' -MockWith {
@@ -55,7 +55,7 @@ Describe "Add-ClarityPSScriptSet function for $script:ModuleName" -Tags Build {
         Mock -CommandName 'Get-Content' -MockWith {
             return $ReturnJson
         }
-        Mock -CommandName 'Add-Script' -MockWith {
+        Mock -CommandName 'Add-ScriptLink' -MockWith {
             return "<script>Several Scriptblocks for JavaScript imports"
         }
         Mock -CommandName 'Close-Script' -MockWith {
@@ -70,7 +70,7 @@ Describe "Add-ClarityPSScriptSet function for $script:ModuleName" -Tags Build {
         Mock -CommandName 'Get-Content' -MockWith {
             return $ReturnJson
         }
-        Mock -CommandName 'Add-Script' -MockWith {
+        Mock -CommandName 'Add-ScriptLink' -MockWith {
             return "<script>Several Scriptblocks for JavaScript imports"
         }
         Mock -CommandName 'Close-Script' -MockWith {
@@ -85,7 +85,7 @@ Describe "Add-ClarityPSScriptSet function for $script:ModuleName" -Tags Build {
         Mock -CommandName 'Get-Content' -MockWith {
             Throw "Get-Content Failed."
         }
-        Mock -CommandName 'Add-Script' -MockWith {
+        Mock -CommandName 'Add-ScriptLink' -MockWith {
             return "<script>Several Scriptblocks for JavaScript imports"
         }
         Mock -CommandName 'Close-Script' -MockWith {
@@ -100,7 +100,7 @@ Describe "Add-ClarityPSScriptSet function for $script:ModuleName" -Tags Build {
         Mock -CommandName 'Get-Content' -MockWith {
             return $ReturnJson
         }
-        Mock -CommandName 'Add-Script' -MockWith {
+        Mock -CommandName 'Add-ScriptLink' -MockWith {
             Throw "Add-Script Failed"
         }
         Mock -CommandName 'Close-Script' -MockWith {
@@ -115,7 +115,7 @@ Describe "Add-ClarityPSScriptSet function for $script:ModuleName" -Tags Build {
         Mock -CommandName 'Get-Content' -MockWith {
             return $ReturnJson
         }
-        Mock -CommandName 'Add-Script' -MockWith {
+        Mock -CommandName 'Add-ScriptLink' -MockWith {
             return "<script>Several Scriptblocks for JavaScript imports"
         }
         Mock -CommandName 'Close-Script' -MockWith {

@@ -43,7 +43,7 @@ function Add-Link
 
         if ($Title)
         {
-            $LinkHtml += "<! Start $Title>"
+            $LinkHtml += "<!-- Start $Title -->"
         }
         else
         {

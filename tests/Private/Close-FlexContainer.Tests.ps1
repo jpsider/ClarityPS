@@ -12,7 +12,7 @@ Describe "Close-FlexContainer function for $script:ModuleName" -Tags Build {
         Close-FlexContainer | Should not be $null
     }
     It "Should be valid ClarityPS HTML." {
-        Close-FlexContainer -Title MyCard | Should be "</div><! End MyCard>"
+        Close-FlexContainer -Title MyCard | Should be "</div><!-- End MyCard -->"
     }
     It "Should be valid ClarityPS HTML." {
         Close-FlexContainer | Should be "</div>"

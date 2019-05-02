@@ -11,7 +11,7 @@ Describe "New-ClarityCard function for $script:ModuleName" -Tags Build {
     }
     It "Should not be Null." {
         Mock -CommandName "Add-FlexItem" {
-            return "div class='flex-item'><! Start Storage>"
+            return "div class='flex-item'><!-- Start Storage -->"
         }
         Mock -CommandName "Add-Icon" -MockWith {
             return "<clr-icon shape='Storage' size='25'></clr-icon>"
@@ -20,25 +20,25 @@ Describe "New-ClarityCard function for $script:ModuleName" -Tags Build {
     }
     It "Should be Proper ClarityPS HTML." {
         Mock -CommandName "Add-FlexItem" {
-            return "<div class='flex-item'><! Start CPU>"
+            return "<div class='flex-item'><!-- Start CPU>"
         }
         Mock -CommandName "Add-Icon" -MockWith {
             return "<clr-icon shape='CPU' size='36'></clr-icon>"
         }
-        New-ClarityCard -Title CPU -Icon CPU -IconSize 36 | Should be "<div class='flex-item'><! Start CPU><div class='card'><div class='card-block'><h3 class='card-title'><clr-icon shape='CPU' size='36'></clr-icon>&nbsp CPU</h3><center>"
+        New-ClarityCard -Title CPU -Icon CPU -IconSize 36 | Should be "<div class='flex-item'><!-- Start CPU><div class='card'><div class='card-block'><h3 class='card-title'><clr-icon shape='CPU' size='36'></clr-icon>&nbsp CPU</h3><center>"
     }
     It "Should be Proper ClarityPS HTML." {
         Mock -CommandName "Add-FlexItem" {
-            return "<div class='flex-item'><! Start Storage>"
+            return "<div class='flex-item'><!-- Start Storage -->"
         }
         Mock -CommandName "Add-Icon" -MockWith {
             return "<clr-icon shape='Storage' size='25'></clr-icon>"
         }
-        New-ClarityCard -Title Memory | Should be "<div class='flex-item'><! Start Storage><div class='card'><div class='card-block'><h3 class='card-title'>&nbsp Memory</h3><center>"
+        New-ClarityCard -Title Memory | Should be "<div class='flex-item'><!-- Start Storage --><div class='card'><div class='card-block'><h3 class='card-title'>&nbsp Memory</h3><center>"
     }
     It "Should not throw." {
         Mock -CommandName "Add-FlexItem" {
-            return "<div class='flex-item'><! Start Storage>"
+            return "<div class='flex-item'><!-- Start Storage -->"
         }
         { New-ClarityCard -Title Storage } | Should not Throw
     }

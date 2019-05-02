@@ -24,7 +24,7 @@ function Close-ButtonGroup
         # Determine if a title was specified
         if ($Title)
         {
-            $ButtonGroupHtml = "</div><! End $Title>"
+            $ButtonGroupHtml = "</div><!-- End $Title -->"
         }
         else
         {

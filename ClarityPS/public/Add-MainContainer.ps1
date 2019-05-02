@@ -24,7 +24,7 @@ function Add-MainContainer
         # Determine if a title was specified
         if ($Title)
         {
-            $MainContainerHtml = "<div class='main-container'><! Start $Title>"
+            $MainContainerHtml = "<div class='main-container'><!-- Start $Title -->"
         }
         else
         {

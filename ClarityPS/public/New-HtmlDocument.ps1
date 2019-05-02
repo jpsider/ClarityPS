@@ -24,7 +24,7 @@ function New-HtmlDocument
         # Determine if a title was specified
         if ($Title)
         {
-            $HtmlString = "<!DOCTYPE html><html lang='en'><! Start $Title>"
+            $HtmlString = "<!DOCTYPE html><html lang='en'><!-- Start $Title -->"
         }
         else
         {

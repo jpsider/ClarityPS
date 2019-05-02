@@ -24,7 +24,7 @@ function Add-HeaderAction
         # Determine if a title was specified
         if ($Title)
         {
-            $HeaderActionsHtml = "<div class='header-actions'><! Start $Title>"
+            $HeaderActionsHtml = "<div class='header-actions'><!-- Start $Title -->"
         }
         else
         {

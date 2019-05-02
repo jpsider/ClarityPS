@@ -28,8 +28,9 @@ function Add-ClarityPSHeadSet
             $ClarityPSHeadSetHtml += Add-ClarityPSLinkSet
             $ClarityPSHeadSetHtml += Add-ClarityPSScriptSet
             $ClarityPSHeadSetHtml += Add-ClarityPSStyleSet
-            $ClarityPSHeadSetHtml += Add-ClarityIconSet
+            $ClarityPSHeadSetHtml += Add-ClarityPSIconSet
             $ClarityPSHeadSetHtml += Add-HtmlTitle -Title "ClarityPS"
+            $ClarityPSHeadSetHtml += Close-HtmlTitle
             $ClarityPSHeadSetHtml += Close-HtmlHead -Title $Title
             $ClarityPSHeadSetHtml
         }

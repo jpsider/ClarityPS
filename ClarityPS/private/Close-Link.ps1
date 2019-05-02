@@ -24,7 +24,7 @@ function Close-Link
         # Determine if a title was specified
         if ($Title)
         {
-            $LinkHtml = "</a><! End $Title>"
+            $LinkHtml = "</a><!-- End $Title -->"
         }
         else
         {

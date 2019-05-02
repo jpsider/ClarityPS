@@ -26,7 +26,7 @@ function Add-ClarityPSHeader
             # Determine if a title was specified
             $ClarityPSHeaderHtml += Add-Header -Title HeaderElement
             $ClarityPSHeaderHtml += Add-Branding -Title BrandingElement
-            $ClarityPSHeaderHtml += Add-BrandingTitle -Title BrandingElement
+            $ClarityPSHeaderHtml += Add-BrandingTitle -Title ClarityPS
             $ClarityPSHeaderHtml += Close-Branding
 
             $ClarityPSHeaderHtml += Add-HeaderNav -Title HeaderNav

@@ -12,7 +12,7 @@ Describe "Close-Link function for $script:ModuleName" -Tags Build {
         Close-Link | Should not be $null
     }
     It "Should be valid ClarityPS HTML." {
-        Close-Link -Title MyCard | Should be "</a><! End MyCard>"
+        Close-Link -Title MyCard | Should be "</a><!-- End MyCard -->"
     }
     It "Should be valid ClarityPS HTML." {
         Close-Link | Should be "</a>"

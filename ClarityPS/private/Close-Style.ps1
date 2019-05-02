@@ -24,7 +24,7 @@ function Close-Style
         # Determine if a title was specified
         if ($Title)
         {
-            $StyleHtml = "</style><! End $Title>"
+            $StyleHtml = "</style><!-- End $Title -->"
         }
         else
         {

@@ -24,7 +24,7 @@ function Close-FlexContainer
         # Determine if a title was specified
         if ($Title)
         {
-            $FlexContainerHtml = "</div><! End $Title>"
+            $FlexContainerHtml = "</div><!-- End $Title -->"
         }
         else
         {

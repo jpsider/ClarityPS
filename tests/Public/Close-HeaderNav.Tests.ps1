@@ -12,7 +12,7 @@ Describe "Close-HeaderNav function for $script:ModuleName" -Tags Build {
         Close-HeaderNav | Should not be $null
     }
     It "Should be valid ClarityPS HTML." {
-        Close-HeaderNav -Title MyCard | Should be "</div><! End MyCard>"
+        Close-HeaderNav -Title MyCard | Should be "</div><!-- End MyCard -->"
     }
     It "Should be valid ClarityPS HTML." {
         Close-HeaderNav | Should be "</div>"

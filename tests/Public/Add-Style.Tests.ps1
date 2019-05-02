@@ -12,7 +12,7 @@ Describe "Add-Style function for $script:ModuleName" -Tags Build {
         Add-Style -StyleText "Some CSS" | Should not be $null
     }
     It "Should be valid ClarityPS HTML." {
-        Add-Style -Title MyCard -StyleText "Some CSS" | Should be "<style>Some CSS<! Start MyCard>"
+        Add-Style -Title MyCard -StyleText "Some CSS" | Should be "<style>Some CSS<!-- Start MyCard -->"
     }
     It "Should be valid ClarityPS HTML." {
         Add-Style -StyleText "Some CSS" | Should be "<style>Some CSS"

@@ -12,7 +12,7 @@ Describe "Add-ProgressBlock function for $script:ModuleName" -Tags Build {
         Add-ProgressBlock -Title MyCard -Class "progress success" -Value "29" -Max "100" | Should not be $null
     }
     It "Should be valid ClarityPS HTML." {
-        Add-ProgressBlock -Title MyCard -Class "progress success" -Value "29" -Max "100" | Should be "<div class='progress-block'><div class='progress success'><progress value='29' max='100' data-displayval='29%'></progress></div></div><! Start MyCard>"
+        Add-ProgressBlock -Title MyCard -Class "progress success" -Value "29" -Max "100" | Should be "<div class='progress-block'><div class='progress success'><progress value='29' max='100' data-displayval='29%'></progress></div></div><!-- Start MyCard -->"
     }
     It "Should be valid ClarityPS HTML." {
         Add-ProgressBlock -Class "progress success" -Value "29" -Max "100" | Should be "<div class='progress-block'><div class='progress success'><progress value='29' max='100' data-displayval='29%'></progress></div></div>"

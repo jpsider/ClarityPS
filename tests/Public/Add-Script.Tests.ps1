@@ -12,7 +12,7 @@ Describe "Add-Script function for $script:ModuleName" -Tags Build {
         Add-Script -Title MyCard -ScriptText "Some JavaScript" | Should not be $null
     }
     It "Should be valid ClarityPS HTML." {
-        Add-Script -Title MyCard -ScriptText "Some JavaScript" | Should be "<script>Some JavaScript<! Start MyCard>"
+        Add-Script -Title MyCard -ScriptText "Some JavaScript" | Should be "<script>Some JavaScript<!-- Start MyCard -->"
     }
     It "Should be valid ClarityPS HTML." {
         Add-Script -ScriptText "Some JavaScript" | Should be "<script>Some JavaScript"

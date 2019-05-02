@@ -24,7 +24,7 @@ function Add-ClarityPSIconSet
         try
         {
             $SourceModulePath = (Split-Path -Path (Get-Module -ListAvailable ClarityPS | Sort-Object -Property Version -Descending | Select-Object -First 1).path)
-            $ScriptPath = "$SourceModulePath\lib\IconScript.js"
+            $ScriptPath = "$SourceModulePath\lib\IconSet.js"
             $IconScriptSet = Get-Content -Path $ScriptPath
             $ClarityPSIconJsHtml += Add-Script -Title $Title -ScriptText "$IconScriptSet"
             $ClarityPSIconJsHtml += Close-Script

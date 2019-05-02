@@ -12,7 +12,7 @@ Describe "Close-Header function for $script:ModuleName" -Tags Build {
         Close-Header | Should not be $null
     }
     It "Should be valid ClarityPS HTML." {
-        Close-Header -Title MyCard | Should be "</header><! End MyCard>"
+        Close-Header -Title MyCard | Should be "</header><!-- End MyCard -->"
     }
     It "Should be valid ClarityPS HTML." {
         Close-Header | Should be "</header>"

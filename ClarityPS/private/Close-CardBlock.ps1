@@ -24,7 +24,7 @@ function Close-CardBlock
         # Determine if a title was specified
         if ($Title)
         {
-            $CardBlockHtml = "</div><! End $Title>"
+            $CardBlockHtml = "</div><!-- End $Title -->"
         }
         else
         {

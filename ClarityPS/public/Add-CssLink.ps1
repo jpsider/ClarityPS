@@ -33,11 +33,11 @@ function Add-CssLink
         # Determine if a title was specified
         if ($Title)
         {
-            $CssLinkHtml = "<link rel='$RelType' href='$URL' title='$LinkTitle type='text/css' /><! Start $Title>"
+            $CssLinkHtml = "<link rel='$RelType' href='$URL' title='$LinkTitle' type='text/css' /><!-- Start $Title -->"
         }
         else
         {
-            $CssLinkHtml = "<link rel='$RelType' href='$URL' title='$LinkTitle type='text/css' />"
+            $CssLinkHtml = "<link rel='$RelType' href='$URL' title='$LinkTitle' type='text/css' />"
         }
         $CssLinkHtml
     }

@@ -17,9 +17,9 @@ Describe "Add-ClarityPSBody function for $script:ModuleName" -Tags Build {
     }
     It "Should be valid ClarityPS HTML." {
         Mock -CommandName 'Add-HtmlBody' -MockWith {
-            return "<body onload='set_style_from_cookie()'><! Start ClarityPSHtmlBody>"
+            return "<body onload='set_style_from_cookie()'><!-- Start ClarityPSHtmlBody -->"
         }
-        Add-ClarityPSBody -Title ClarityPSHtmlBody | Should be "<body onload='set_style_from_cookie()'><! Start ClarityPSHtmlBody>"
+        Add-ClarityPSBody -Title ClarityPSHtmlBody | Should be "<body onload='set_style_from_cookie()'><!-- Start ClarityPSHtmlBody -->"
     }
     It "Should be valid ClarityPS HTML." {
         Mock -CommandName 'Add-HtmlBody' -MockWith {

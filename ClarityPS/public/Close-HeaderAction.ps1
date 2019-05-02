@@ -24,7 +24,7 @@ function Close-HeaderAction
         # Determine if a title was specified
         if ($Title)
         {
-            $HeaderActionHtml = "</div><! End $Title>"
+            $HeaderActionHtml = "</div><!-- End $Title -->"
         }
         else
         {

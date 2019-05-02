@@ -24,7 +24,7 @@ function Add-HeaderNav
         # Determine if a title was specified
         if ($Title)
         {
-            $HeaderNavHtml = "<div class='header-nav'><! Start $Title>"
+            $HeaderNavHtml = "<div class='header-nav'><!-- Start $Title -->"
         }
         else
         {

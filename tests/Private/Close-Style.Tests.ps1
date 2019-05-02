@@ -12,7 +12,7 @@ Describe "Close-Style function for $script:ModuleName" -Tags Build {
         Close-Style | Should not be $null
     }
     It "Should be valid ClarityPS HTML." {
-        Close-Style -Title MyCard | Should be "</style><! End MyCard>"
+        Close-Style -Title MyCard | Should be "</style><!-- End MyCard -->"
     }
     It "Should be valid ClarityPS HTML." {
         Close-Style | Should be "</style>"

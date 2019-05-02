@@ -12,7 +12,7 @@ Describe "Add-CardFooter function for $script:ModuleName" -Tags Build {
         Add-CardFooter -Title MyCardFooter -CardFooter "SomeHTML Text" | Should not be $null
     }
     It "Should be valid ClarityPS HTML." {
-        Add-CardFooter -Title MyCardFooter -CardFooter "SomeHTML Text" | Should be "<! Start MyCardFooter>SomeHTML Text"
+        Add-CardFooter -Title MyCardFooter -CardFooter "SomeHTML Text" | Should be "<!-- Start MyCardFooter -->SomeHTML Text"
     }
     It "Should be valid ClarityPS HTML." {
         Add-CardFooter -CardFooter "SomeHTML Text" | Should be "SomeHTML Text"

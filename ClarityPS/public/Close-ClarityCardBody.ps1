@@ -24,7 +24,7 @@ function Close-ClarityCardBody
         # Determine if a title was specified
         if ($Title)
         {
-            $BrandingHtml = "</body><! End $Title>"
+            $BrandingHtml = "</body><!-- End $Title -->"
         }
         else
         {

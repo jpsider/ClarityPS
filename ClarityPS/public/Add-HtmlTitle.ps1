@@ -27,7 +27,7 @@ function Add-HtmlTitle
         # Determine if a title was specified
         if ($Title)
         {
-            $HtmlTitleHtml = "<title>$HtmlTitle<! Start $Title>"
+            $HtmlTitleHtml = "<!-- Start $Title --><title>$HtmlTitle"
         }
         else
         {

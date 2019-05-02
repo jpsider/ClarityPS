@@ -12,7 +12,7 @@ Describe "Add-HtmlHead function for $script:ModuleName" -Tags Build {
         Add-HtmlHead | Should not be $null
     }
     It "Should be valid ClarityPS HTML." {
-        Add-HtmlHead -Title MyCard | Should be "<head><! Start MyCard>"
+        Add-HtmlHead -Title MyCard | Should be "<head><!-- Start MyCard -->"
     }
     It "Should be valid ClarityPS HTML." {
         Add-HtmlHead | Should be "<head>"

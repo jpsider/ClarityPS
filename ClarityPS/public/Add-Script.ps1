@@ -27,7 +27,7 @@ function Add-Script
         # Determine if a title was specified
         if ($Title)
         {
-            $ScriptHtml = "<script>$ScriptText<! Start $Title>"
+            $ScriptHtml = "<script>$ScriptText<!-- Start $Title -->"
         }
         else
         {

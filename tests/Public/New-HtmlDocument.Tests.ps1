@@ -12,7 +12,7 @@ Describe "New-HtmlDocument function for $script:ModuleName" -Tags Build {
         New-HtmlDocument -Title ClarityPSDocument | Should not be $null
     }
     It "Should be valid ClarityPS HTML." {
-        New-HtmlDocument -Title ClarityPSDocument | Should be "<!DOCTYPE html><html lang='en'><! Start ClarityPSDocument>"
+        New-HtmlDocument -Title ClarityPSDocument | Should be "<!DOCTYPE html><html lang='en'><!-- Start ClarityPSDocument -->"
     }
     It "Should be valid ClarityPS HTML." {
         New-HtmlDocument | Should be "<!DOCTYPE html><html lang='en'>"

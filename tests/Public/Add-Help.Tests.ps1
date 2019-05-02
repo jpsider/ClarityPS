@@ -12,7 +12,7 @@ Describe "Add-Help function for $script:ModuleName" -Tags Build {
         Add-Help -Title MyCard -URL "http://invoke-automation.blog" | Should not be $null
     }
     It "Should be valid ClarityPS HTML." {
-        Add-Help -Title MyCard -URL "http://invoke-automation.blog" | Should be "<a href='http://invoke-automation.blog' class='nav-link nav-icon' target='_blank'><! Start MyCard>"
+        Add-Help -Title MyCard -URL "http://invoke-automation.blog" | Should be "<a href='http://invoke-automation.blog' class='nav-link nav-icon' target='_blank'><!-- Start MyCard -->"
     }
     It "Should be valid ClarityPS HTML." {
         Add-Help -URL "http://invoke-automation.blog" | Should be "<a href='http://invoke-automation.blog' class='nav-link nav-icon' target='_blank'>"

@@ -27,7 +27,7 @@ function Add-Help
         # Determine if a title was specified
         if ($Title)
         {
-            $HelpHtml = "<a href='$URL' class='nav-link nav-icon' target='_blank'><! Start $Title>"
+            $HelpHtml = "<a href='$URL' class='nav-link nav-icon' target='_blank'><!-- Start $Title -->"
         }
         else
         {

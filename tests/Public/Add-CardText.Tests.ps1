@@ -12,7 +12,7 @@ Describe "Add-CardText function for $script:ModuleName" -Tags Build {
         Add-CardText -Title MyCardText -CardText "<someElement>SomeHTML Text</someElement>" | Should not be $null
     }
     It "Should be valid ClarityPS HTML." {
-        Add-CardText -Title MyCardText -CardText "<someElement>SomeHTML Text</someElement>" | Should be "<! Start MyCardText><p class='card-text'><someElement>SomeHTML Text</someElement></p>"
+        Add-CardText -Title MyCardText -CardText "<someElement>SomeHTML Text</someElement>" | Should be "<!-- Start MyCardText --><p class='card-text'><someElement>SomeHTML Text</someElement></p>"
     }
     It "Should be valid ClarityPS HTML." {
         Add-CardText -CardText "<someElement>SomeHTML Text</someElement>" | Should be "<p class='card-text'><someElement>SomeHTML Text</someElement></p>"

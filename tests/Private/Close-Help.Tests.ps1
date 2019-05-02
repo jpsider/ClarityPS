@@ -12,7 +12,7 @@ Describe "Close-Help function for $script:ModuleName" -Tags Build {
         Close-Help | Should not be $null
     }
     It "Should be valid ClarityPS HTML." {
-        Close-Help -Title MyCard | Should be "<clr-icon shape='cog'></clr-icon></a><! End MyCard>"
+        Close-Help -Title MyCard | Should be "<clr-icon shape='cog'></clr-icon></a><!-- End MyCard -->"
     }
     It "Should be valid ClarityPS HTML." {
         Close-Help | Should be "<clr-icon shape='cog'></clr-icon></a>"

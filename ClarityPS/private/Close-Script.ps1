@@ -24,7 +24,7 @@ function Close-Script
         # Determine if a title was specified
         if ($Title)
         {
-            $ScriptHtml = "</script><! End $Title>"
+            $ScriptHtml = "</script><!-- End $Title -->"
         }
         else
         {

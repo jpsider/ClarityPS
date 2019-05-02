@@ -51,7 +51,7 @@ function Add-Button
         }
         if ($Title)
         {
-            $ButtonHtml += "<! Start $Title>"
+            $ButtonHtml += "<!-- Start $Title -->"
         }
         else
         {

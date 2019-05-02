@@ -12,7 +12,7 @@ Describe "Add-HeaderNav function for $script:ModuleName" -Tags Build {
         Add-HeaderNav | Should not be $null
     }
     It "Should be valid ClarityPS HTML." {
-        Add-HeaderNav -Title MyCard | Should be "<div class='header-nav'><! Start MyCard>"
+        Add-HeaderNav -Title MyCard | Should be "<div class='header-nav'><!-- Start MyCard -->"
     }
     It "Should be valid ClarityPS HTML." {
         Add-HeaderNav | Should be "<div class='header-nav'>"

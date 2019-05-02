@@ -10,49 +10,49 @@ function Close-HtmlDocument { }
 Describe "Close-ClarityDocument function for $script:ModuleName" -Tags Build {
     It "Should return False if -WhatIf is used." {
         Mock -CommandName 'Close-FlexContainer' -MockWith {
-            return "</flex-container><! End FlexContainer>"
+            return "</flex-container><!-- End FlexContainer>"
         }
         Mock -CommandName 'Close-HtmlBody' -MockWith {
-            return "</body><! End Body>"
+            return "</body><!-- End Body>"
         }
         Mock -CommandName 'Close-HtmlDocument' -MockWith {
-            return "</html><! End ClarityDocument>"
+            return "</html><!-- End ClarityDocument -->"
         }
         Close-ClarityDocument -WhatIf | Should be $false
     }
     It "Should not be null." {
         Mock -CommandName 'Close-FlexContainer' -MockWith {
-            return "</flex-container><! End FlexContainer>"
+            return "</flex-container><!-- End FlexContainer>"
         }
         Mock -CommandName 'Close-HtmlBody' -MockWith {
-            return "</body><! End Body>"
+            return "</body><!-- End Body>"
         }
         Mock -CommandName 'Close-HtmlDocument' -MockWith {
-            return "</html><! End ClarityDocument>"
+            return "</html><!-- End ClarityDocument -->"
         }
         Close-ClarityDocument | Should not be $null
     }
     It "Should be valid ClarityPS HTML." {
         Mock -CommandName 'Close-FlexContainer' -MockWith {
-            return "</flex-container><! End FlexContainer>"
+            return "</flex-container><!-- End FlexContainer>"
         }
         Mock -CommandName 'Close-HtmlBody' -MockWith {
-            return "</body><! End Body>"
+            return "</body><!-- End Body>"
         }
         Mock -CommandName 'Close-HtmlDocument' -MockWith {
-            return "</html><! End ClarityDocument>"
+            return "</html><!-- End ClarityDocument -->"
         }
-        Close-ClarityDocument -Title MyCard | Should be "</flex-container><! End FlexContainer></body><! End Body></html><! End ClarityDocument>"
+        Close-ClarityDocument -Title MyCard | Should be "</flex-container><!-- End FlexContainer></body><!-- End Body></html><!-- End ClarityDocument -->"
     }
     It "Should not Throw" {
         Mock -CommandName 'Close-FlexContainer' -MockWith {
-            return "</flex-container><! End FlexContainer>"
+            return "</flex-container><!-- End FlexContainer>"
         }
         Mock -CommandName 'Close-HtmlBody' -MockWith {
-            return "</body><! End Body>"
+            return "</body><!-- End Body>"
         }
         Mock -CommandName 'Close-HtmlDocument' -MockWith {
-            return "</html><! End ClarityDocument>"
+            return "</html><!-- End ClarityDocument -->"
         }
         { Close-ClarityDocument } | Should not Throw
     }

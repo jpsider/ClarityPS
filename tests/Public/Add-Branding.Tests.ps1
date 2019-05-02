@@ -12,7 +12,7 @@ Describe "Add-Branding function for $script:ModuleName" -Tags Build {
         Add-Branding | Should not be $null
     }
     It "Should be valid ClarityPS HTML." {
-        Add-Branding -Title MyCard | Should be "<div class='branding'><! Start MyCard>"
+        Add-Branding -Title MyCard | Should be "<div class='branding'><!-- Start MyCard -->"
     }
     It "Should be valid ClarityPS HTML." {
         Add-Branding | Should be "<div class='branding'>"

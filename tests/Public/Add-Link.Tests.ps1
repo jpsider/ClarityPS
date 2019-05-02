@@ -12,7 +12,7 @@ Describe "Add-Link function for $script:ModuleName" -Tags Build {
         Add-Link -URL "http://invoke-automation.blog" -LinkTitle "Invoke-Automation" | Should not be $null
     }
     It "Should be valid ClarityPS HTML." {
-        Add-Link -Title MyCard -URL "http://invoke-automation.blog" -LinkTitle "Invoke-Automation" -NewTab | Should be "<a href='http://invoke-automation.blog' target='_blank'>Invoke-Automation<! Start MyCard>"
+        Add-Link -Title MyCard -URL "http://invoke-automation.blog" -LinkTitle "Invoke-Automation" -NewTab | Should be "<a href='http://invoke-automation.blog' target='_blank'>Invoke-Automation<!-- Start MyCard -->"
     }
     It "Should be valid ClarityPS HTML with new tab." {
         Add-Link -URL "http://invoke-automation.blog" -LinkTitle "Invoke-Automation" -NewTab | Should be "<a href='http://invoke-automation.blog' target='_blank'>Invoke-Automation"

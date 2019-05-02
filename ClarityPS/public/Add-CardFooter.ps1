@@ -27,7 +27,7 @@ function Add-CardFooter
         # Determine if a title was specified
         if ($Title)
         {
-            $CardFooterHtml = "<! Start $Title>$CardFooter"
+            $CardFooterHtml = "<!-- Start $Title -->$CardFooter"
         }
         else
         {

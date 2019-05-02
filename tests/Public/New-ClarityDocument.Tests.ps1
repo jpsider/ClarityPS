@@ -23,7 +23,7 @@ Describe "New-ClarityDocument function for $script:ModuleName" -Tags Build {
             return "<body onload='set_style_from_cookie()'>"
         }
         Mock -CommandName Add-MainContainer -MockWith {
-            return "<div class='main-container'><! Start MainContainer>"
+            return "<div class='main-container'><!-- Start MainContainer -->"
         }
         Mock -CommandName Add-ClarityPSHeader -MockWith {
             return "<header>Lots of Header Text></Header>"
@@ -47,7 +47,7 @@ Describe "New-ClarityDocument function for $script:ModuleName" -Tags Build {
             return "<body onload='set_style_from_cookie()'>"
         }
         Mock -CommandName Add-MainContainer -MockWith {
-            return "<div class='main-container'><! Start MainContainer>"
+            return "<div class='main-container'><!-- Start MainContainer -->"
         }
         Mock -CommandName Add-ClarityPSHeader -MockWith {
             return "<header>Lots of Header Text></Header>"
@@ -71,7 +71,7 @@ Describe "New-ClarityDocument function for $script:ModuleName" -Tags Build {
             return "<body onload='set_style_from_cookie()'>"
         }
         Mock -CommandName Add-MainContainer -MockWith {
-            return "<div class='main-container'><! Start MainContainer>"
+            return "<div class='main-container'><!-- Start MainContainer -->"
         }
         Mock -CommandName Add-ClarityPSHeader -MockWith {
             return "<header>Lots of Header Text></Header>"
@@ -82,7 +82,7 @@ Describe "New-ClarityDocument function for $script:ModuleName" -Tags Build {
         Mock -CommandName Add-FlexContainer -MockWith {
             return "<flex-container>"
         }
-        New-ClarityDocument -Title "NewClarityDoc" | Should be "<!DOCTYPE html><html lang='en'><head>Lots of Head text</head><body onload='set_style_from_cookie()'><div class='main-container'><! Start MainContainer><header>Lots of Header Text></Header><h3>NewClarityDoc</h3></br></br><flex-container>"
+        New-ClarityDocument -Title "NewClarityDoc" | Should be "<!DOCTYPE html><html lang='en'><head>Lots of Head text</head><body onload='set_style_from_cookie()'><div class='main-container'><!-- Start MainContainer --><header>Lots of Header Text></Header><h3>NewClarityDoc</h3></br></br><flex-container>"
     }
     It "Should not Throw" {
         Mock -CommandName New-HtmlDocument -MockWith {
@@ -95,7 +95,7 @@ Describe "New-ClarityDocument function for $script:ModuleName" -Tags Build {
             return "<body onload='set_style_from_cookie()'>"
         }
         Mock -CommandName Add-MainContainer -MockWith {
-            return "<div class='main-container'><! Start MainContainer>"
+            return "<div class='main-container'><!-- Start MainContainer -->"
         }
         Mock -CommandName Add-ClarityPSHeader -MockWith {
             return "<header>Lots of Header Text></Header>"
@@ -119,7 +119,7 @@ Describe "New-ClarityDocument function for $script:ModuleName" -Tags Build {
             return "<body onload='set_style_from_cookie()'>"
         }
         Mock -CommandName Add-MainContainer -MockWith {
-            return "<div class='main-container'><! Start MainContainer>"
+            return "<div class='main-container'><!-- Start MainContainer -->"
         }
         Mock -CommandName Add-ClarityPSHeader -MockWith {
             return "<header>Lots of Header Text></Header>"
@@ -143,7 +143,7 @@ Describe "New-ClarityDocument function for $script:ModuleName" -Tags Build {
             return "<body onload='set_style_from_cookie()'>"
         }
         Mock -CommandName Add-MainContainer -MockWith {
-            return "<div class='main-container'><! Start MainContainer>"
+            return "<div class='main-container'><!-- Start MainContainer -->"
         }
         Mock -CommandName Add-ClarityPSHeader -MockWith {
             return "<header>Lots of Header Text></Header>"
@@ -167,7 +167,7 @@ Describe "New-ClarityDocument function for $script:ModuleName" -Tags Build {
             Throw "Add-ClarityPSBody Failed"
         }
         Mock -CommandName Add-MainContainer -MockWith {
-            return "<div class='main-container'><! Start MainContainer>"
+            return "<div class='main-container'><!-- Start MainContainer -->"
         }
         Mock -CommandName Add-ClarityPSHeader -MockWith {
             return "<header>Lots of Header Text></Header>"
@@ -215,7 +215,7 @@ Describe "New-ClarityDocument function for $script:ModuleName" -Tags Build {
             return "<body onload='set_style_from_cookie()'>"
         }
         Mock -CommandName Add-MainContainer -MockWith {
-            return "<div class='main-container'><! Start MainContainer>"
+            return "<div class='main-container'><!-- Start MainContainer -->"
         }
         Mock -CommandName Add-ClarityPSHeader -MockWith {
             Throw "Add-ClarityPSHeader Failed."
@@ -239,7 +239,7 @@ Describe "New-ClarityDocument function for $script:ModuleName" -Tags Build {
             return "<body onload='set_style_from_cookie()'>"
         }
         Mock -CommandName Add-MainContainer -MockWith {
-            return "<div class='main-container'><! Start MainContainer>"
+            return "<div class='main-container'><!-- Start MainContainer -->"
         }
         Mock -CommandName Add-ClarityPSHeader -MockWith {
             return "<header>Lots of Header Text></Header>"
@@ -263,7 +263,7 @@ Describe "New-ClarityDocument function for $script:ModuleName" -Tags Build {
             return "<body onload='set_style_from_cookie()'>"
         }
         Mock -CommandName Add-MainContainer -MockWith {
-            return "<div class='main-container'><! Start MainContainer>"
+            return "<div class='main-container'><!-- Start MainContainer -->"
         }
         Mock -CommandName Add-ClarityPSHeader -MockWith {
             return "<header>Lots of Header Text></Header>"

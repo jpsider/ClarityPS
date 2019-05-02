@@ -37,7 +37,7 @@ function Add-HtmlBody
 
         if ($Title)
         {
-            $HtmlBodyHtml += "><! Start $Title>"
+            $HtmlBodyHtml += "><!-- Start $Title -->"
         }
         else
         {

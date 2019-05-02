@@ -12,7 +12,7 @@ Describe "Close-MainContainer function for $script:ModuleName" -Tags Build {
         Close-MainContainer | Should not be $null
     }
     It "Should be valid ClarityPS HTML." {
-        Close-MainContainer -Title MyCard | Should be "</div><! End MyCard>"
+        Close-MainContainer -Title MyCard | Should be "</div><!-- End MyCard -->"
     }
     It "Should be valid ClarityPS HTML." {
         Close-MainContainer | Should be "</div>"

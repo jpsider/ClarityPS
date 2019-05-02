@@ -24,7 +24,7 @@ function Close-Help
         # Determine if a title was specified
         if ($Title)
         {
-            $HelpHtml = "<clr-icon shape='cog'></clr-icon></a><! End $Title>"
+            $HelpHtml = "<clr-icon shape='cog'></clr-icon></a><!-- End $Title -->"
         }
         else
         {

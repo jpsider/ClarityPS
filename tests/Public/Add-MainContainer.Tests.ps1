@@ -12,7 +12,7 @@ Describe "Add-MainContainer function for $script:ModuleName" -Tags Build {
         Add-MainContainer | Should not be $null
     }
     It "Should be valid ClarityPS HTML." {
-        Add-MainContainer -Title MyCard | Should be "<div class='main-container'><! Start MyCard>"
+        Add-MainContainer -Title MyCard | Should be "<div class='main-container'><!-- Start MyCard -->"
     }
     It "Should be valid ClarityPS HTML." {
         Add-MainContainer | Should be "<div class='main-container'>"

@@ -33,7 +33,7 @@ function Add-ProgressBlock
         # Determine if a title was specified
         if ($Title)
         {
-            $ProgressBlockHtml = "<div class='progress-block'><div class='$Class'><progress value='$value' max='$Max' data-displayval='$Value%'></progress></div></div><! Start $Title>"
+            $ProgressBlockHtml = "<div class='progress-block'><div class='$Class'><progress value='$value' max='$Max' data-displayval='$Value%'></progress></div></div><!-- Start $Title -->"
         }
         else
         {

@@ -12,7 +12,7 @@ Describe "Add-HeaderAction function for $script:ModuleName" -Tags Build {
         Add-HeaderAction | Should not be $null
     }
     It "Should be valid ClarityPS HTML." {
-        Add-HeaderAction -Title MyCard | Should be "<div class='header-actions'><! Start MyCard>"
+        Add-HeaderAction -Title MyCard | Should be "<div class='header-actions'><!-- Start MyCard -->"
     }
     It "Should be valid ClarityPS HTML." {
         Add-HeaderAction | Should be "<div class='header-actions'>"
