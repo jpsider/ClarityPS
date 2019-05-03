@@ -4,8 +4,52 @@ theme: readthedocs
 edit_uri: edit/master/docs/
 pages:
 - Home: index.md
-- ReportCardPS Basics:
-  - What is ReportCardPS: about.md
+- ClarityPS Basics:
+  - What is ClarityPS: about.md
   - Quick Start: Quick-Start-Installation-and-Example.md
 - Public Functions:
-  - Invoke-DeployRestPS: NewFunction.md
+  - Add-Branding: Add-Branding.md
+  - Add-BrandingTitle: Add-BrandingTitle.md
+  - Add-Button: Add-Button.md
+  - Add-ButtonGroup: Add-ButtonGroup.md
+  - Add-CardFooter: Add-CardFooter.md
+  - Add-CardText: Add-CardText.md
+  - Add-ClarityPSBody: Add-ClarityPSBody.md
+  - Add-ClarityPSCookie: Add-ClarityPSCookie.md
+  - Add-ClarityPSHeader: Add-ClarityPSHeader.md
+  - Add-ClarityPSHeadSet: Add-ClarityPSHeadSet.md
+  - Add-ClarityPSIconSet: Add-ClarityPSIconSet.md
+  - Add-ClarityPSLinkSet: Add-ClarityPSLinkSet.md
+  - Add-ClarityPSScriptSet: Add-ClarityPSScriptSet.md
+  - Add-ClarityPSStyleSet: Add-ClarityPSStyleSet.md
+  - Add-CssLink: Add-CssLink.md
+  - Add-DocumentTitle: Add-DocumentTitle.md
+  - Add-HeaderAction: Add-HeaderAction.md
+  - Add-HeaderNav: Add-HeaderNav.md
+  - Add-HeaderNavLink: Add-HeaderNavLink.md
+  - Add-Help: Add-Help.md
+  - Add-HtmlBody: Add-HtmlBody.md
+  - Add-HtmlHead: Add-HtmlHead.md
+  - Add-HtmlTitle: Add-HtmlTitle.md
+  - Add-Icon: Add-Icon.md
+  - Add-Link: Add-Link.md
+  - Add-MainContainer: Add-MainContainer.md
+  - Add-ProgressBlock: Add-ProgressBlock.md
+  - Add-Script: Add-Script.md
+  - Add-ScriptLink: Add-ScriptLink.md
+  - Add-Style: Add-Style.md
+  - Close-Branding: Close-Branding.md
+  - Close-ButtonGroup: Close-ButtonGroup.md
+  - Close-ClarityCard: Close-ClarityCard.md
+  - Close-ClarityCardBody: Close-ClarityCardBody.md
+  - Close-ClarityDocument: Close-ClarityDocument.md
+  - Close-Header: Close-Header.md
+  - Close-HeaderAction: Close-HeaderAction.md
+  - Close-HeaderNav: Close-HeaderNav.md
+  - Close-HtmlBody: Close-HtmlBody.md
+  - Close-HtmlDocument: Close-HtmlDocument.md
+  - Close-HtmlHead: Close-HtmlHead.md
+  - Close-MainContainer: Close-MainContainer.md
+  - New-ClarityCard: New-ClarityCard.md
+  - New-ClarityDocument: New-ClarityDocument.md
+  - New-HtmlDocument: New-HtmlDocument.md
