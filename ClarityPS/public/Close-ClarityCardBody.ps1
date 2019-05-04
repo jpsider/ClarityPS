@@ -2,7 +2,7 @@ function Close-ClarityCardBody
 {
     <#
     .DESCRIPTION
-        Closes Branding Element
+        Closes Card Body Element
     .PARAMETER Title
         Title, used for comment
     .EXAMPLE
@@ -24,11 +24,11 @@ function Close-ClarityCardBody
         # Determine if a title was specified
         if ($Title)
         {
-            $BrandingHtml = "</body><!-- End $Title -->"
+            $BrandingHtml = "</center><!-- End $Title -->"
         }
         else
         {
-            $BrandingHtml = "</body>"
+            $BrandingHtml = "</center>"
         }
         $BrandingHtml
     }

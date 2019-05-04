@@ -12,10 +12,10 @@ Describe "Close-ClarityCardBody function for $script:ModuleName" -Tags Build {
         Close-ClarityCardBody | Should not be $null
     }
     It "Should be valid ClarityPS HTML." {
-        Close-ClarityCardBody -Title MyCard | Should be "</body><!-- End MyCard -->"
+        Close-ClarityCardBody -Title MyCard | Should be "</center><!-- End MyCard -->"
     }
     It "Should be valid ClarityPS HTML." {
-        Close-ClarityCardBody | Should be "</body>"
+        Close-ClarityCardBody | Should be "</center>"
     }
     It "Should not Throw" {
         { Close-ClarityCardBody } | Should not Throw
