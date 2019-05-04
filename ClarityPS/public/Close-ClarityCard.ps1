@@ -22,7 +22,7 @@ function Close-ClarityCard
     if ($pscmdlet.ShouldProcess("Starting Close-ClarityCard function."))
     {
         # Return the closing HTML for a Standard ClarityPS Card.
-        $ClosingBaseHTML = "</center></div></div></div>" + "<!-- End $Title Card -->"
+        $ClosingBaseHTML = "</div></div></div>" + "<!-- End $Title Card -->"
         $ClosingBaseHTML
     }
     else
