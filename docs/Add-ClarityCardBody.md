@@ -5,37 +5,37 @@ online version:
 schema: 2.0.0
 ---
 
-# Close-HeaderAction
+# Add-ClarityCardBody
 
 ## SYNOPSIS
 
 ## SYNTAX
 
 ```
-Close-HeaderAction [[-Title] <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Add-ClarityCardBody [-CardText] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Closes Header-Nav Element
+Returns the HTML needed to start Start a Clarity Card Body.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 ```
-Close-HeaderAction -Title MyCard
+Add-ClarityCardBody -CardText "SomeHTML"
 ```
 
 ## PARAMETERS
 
-### -Title
-Title, used for comment
+### -CardText
+Title of the card.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
 Aliases:
 
-Required: False
+Required: True
 Position: 1
 Default value: None
 Accept pipeline input: False

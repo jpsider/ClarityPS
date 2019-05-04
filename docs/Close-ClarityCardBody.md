@@ -1,6 +1,6 @@
 ---
 external help file: ClarityPS-help.xml
-Module Name: ClarityPS
+Module Name: clarityps
 online version:
 schema: 2.0.0
 ---
@@ -16,7 +16,7 @@ Close-ClarityCardBody [[-Title] <String>] [-WhatIf] [-Confirm] [<CommonParameter
 ```
 
 ## DESCRIPTION
-Closes Branding Element
+Closes Card Body Element
 
 ## EXAMPLES
 
@@ -74,14 +74,17 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### System.String
+
 ### System.Boolean
+
 ## NOTES
 No notes at this time.
 
