@@ -21,7 +21,7 @@ function Add-ClarityCardBody
     )
     if ($pscmdlet.ShouldProcess("Starting Add-ClarityCardBody function."))
     {
-        #Open the Body of the card.
+        # Open the Body of the card.
         $CardBodyHtml = "<center><p class='card-text'>$CardText</p>"
         $CardBodyHtml
     }
