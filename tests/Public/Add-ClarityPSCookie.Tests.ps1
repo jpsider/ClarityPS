@@ -6,6 +6,7 @@ $sut = (Split-Path -Leaf $MyInvocation.MyCommand.Path) -replace '\.Tests\.', '.'
 function Get-Module { }
 function Get-Content { }
 function Add-Script { }
+function Close-Script { }
 $RawReturn = @(
     @{
         path = 'c:\someModulePath'
@@ -26,6 +27,9 @@ Describe "Add-ClarityPSCookie function for $script:ModuleName" -Tags Build {
         Mock -CommandName 'Add-Script' -MockWith {
             return $AddScriptText
         }
+        Mock -CommandName 'Close-Script' -MockWith {
+            return "</script>"
+        }
         Add-ClarityPSCookie -WhatIf | Should be $false
     }
     It "Should not be null." {
@@ -37,6 +41,9 @@ Describe "Add-ClarityPSCookie function for $script:ModuleName" -Tags Build {
         }
         Mock -CommandName 'Add-Script' -MockWith {
             return $AddScriptText
+        }
+        Mock -CommandName 'Close-Script' -MockWith {
+            return "</script>"
         }
         Add-ClarityPSCookie | Should not be $null
     }
@@ -50,7 +57,10 @@ Describe "Add-ClarityPSCookie function for $script:ModuleName" -Tags Build {
         Mock -CommandName 'Add-Script' -MockWith {
             return $AddScriptText
         }
-        Add-ClarityPSCookie -Title ClarityCookieMgmtScript | Should be "<script>Lots of JavaScript<!-- Start ClarityCookieMgmtScript -->"
+        Mock -CommandName 'Close-Script' -MockWith {
+            return "</script>"
+        }
+        Add-ClarityPSCookie -Title ClarityCookieMgmtScript | Should be "<script>Lots of JavaScript<!-- Start ClarityCookieMgmtScript --></script>"
     }
     It "Should be valid ClarityPS HTML." {
         Mock -CommandName 'Get-Module' -MockWith {
@@ -62,7 +72,10 @@ Describe "Add-ClarityPSCookie function for $script:ModuleName" -Tags Build {
         Mock -CommandName 'Add-Script' -MockWith {
             return $AddScriptText
         }
-        Add-ClarityPSCookie | Should be "<script>Lots of JavaScript<!-- Start ClarityCookieMgmtScript -->"
+        Mock -CommandName 'Close-Script' -MockWith {
+            return "</script>"
+        }
+        Add-ClarityPSCookie | Should be "<script>Lots of JavaScript<!-- Start ClarityCookieMgmtScript --></script>"
     }
     It "Should not Throw" {
         Mock -CommandName 'Get-Module' -MockWith {
@@ -73,6 +86,9 @@ Describe "Add-ClarityPSCookie function for $script:ModuleName" -Tags Build {
         }
         Mock -CommandName 'Add-Script' -MockWith {
             return $AddScriptText
+        }
+        Mock -CommandName 'Close-Script' -MockWith {
+            return "</script>"
         }
         { Add-ClarityPSCookie } | Should not Throw
     }
@@ -86,6 +102,9 @@ Describe "Add-ClarityPSCookie function for $script:ModuleName" -Tags Build {
         Mock -CommandName 'Add-Script' -MockWith {
             return $AddScriptText
         }
+        Mock -CommandName 'Close-Script' -MockWith {
+            return "</script>"
+        }
         { Add-ClarityPSCookie } | Should Throw
     }
     It "Should Throw if Get-Content fails." {
@@ -98,6 +117,9 @@ Describe "Add-ClarityPSCookie function for $script:ModuleName" -Tags Build {
         Mock -CommandName 'Add-Script' -MockWith {
             return $AddScriptText
         }
+        Mock -CommandName 'Close-Script' -MockWith {
+            return "</script>"
+        }
         { Add-ClarityPSCookie } | Should Throw
     }
     It "Should Throw if Add-Script fails." {
@@ -109,6 +131,24 @@ Describe "Add-ClarityPSCookie function for $script:ModuleName" -Tags Build {
         }
         Mock -CommandName 'Add-Script' -MockWith {
             Throw "Add-Script Failed"
+        }
+        Mock -CommandName 'Close-Script' -MockWith {
+            return "</script>"
+        }
+        { Add-ClarityPSCookie } | Should Throw
+    }
+    It "Should Throw if Close-Script fails." {
+        Mock -CommandName 'Get-Module' -MockWith {
+            return $ReturnData
+        }
+        Mock -CommandName 'Get-Content' -MockWith {
+            return $CookieData
+        }
+        Mock -CommandName 'Add-Script' -MockWith {
+            return $AddScriptText
+        }
+        Mock -CommandName 'Close-Script' -MockWith {
+            Throw "Clost-Script Failed"
         }
         { Add-ClarityPSCookie } | Should Throw
     }

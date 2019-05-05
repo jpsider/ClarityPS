@@ -26,6 +26,7 @@ function Add-ClarityPSCookie
         $ScriptPath = "$SourceModulePath\lib\cookie.js"
         $CookieScript = Get-Content -Path $ScriptPath
         $ClarityPSCookieHtml = Add-Script -Title $Title -ScriptText "$CookieScript"
+        $ClarityPSCookieHtml += Close-Script
         $ClarityPSCookieHtml
     }
     else
