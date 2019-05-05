@@ -1,4 +1,5 @@
-[{
+[
+  {
     "URL": "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"
   },
   {
@@ -6,9 +7,6 @@
   },
   {
     "URL": "https://unpkg.com/@webcomponents/custom-elements/custom-elements.min.js"
-  },
-  {
-    "URL": "https://unpkg.com/@clr/ui/clr-ui.min.css"
   },
   {
     "URL": "https://unpkg.com/clarity-icons@0.10.28/clarity-icons.min.js"

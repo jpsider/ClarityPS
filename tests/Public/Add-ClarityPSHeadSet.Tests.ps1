@@ -12,6 +12,7 @@ function Add-ClarityPSIconSet { }
 function Add-HtmlTitle { }
 function Close-HtmlTitle { }
 function Close-HtmlHead { }
+function Add-ClarityPSCookie { }
 
 Describe "Add-ClarityPSHeadSet function for $script:ModuleName" -Tags Build {
     It "Should return False if -WhatIf is used." {
@@ -38,6 +39,9 @@ Describe "Add-ClarityPSHeadSet function for $script:ModuleName" -Tags Build {
         }
         Mock -CommandName 'Close-HtmlHead' -MockWith {
             return "</head>"
+        }
+        Mock -CommandName 'Add-ClarityPSCookie' -MockWith {
+            return "<script>The Cookie Script</script>"
         }
         Add-ClarityPSHeadSet -WhatIf | Should be $false
     }
@@ -66,6 +70,9 @@ Describe "Add-ClarityPSHeadSet function for $script:ModuleName" -Tags Build {
         Mock -CommandName 'Close-HtmlHead' -MockWith {
             return "</head>"
         }
+        Mock -CommandName 'Add-ClarityPSCookie' -MockWith {
+            return "<script>The Cookie Script</script>"
+        }
         Add-ClarityPSHeadSet | Should not be $null
     }
     It "Should be valid ClarityPS HTML." {
@@ -93,7 +100,10 @@ Describe "Add-ClarityPSHeadSet function for $script:ModuleName" -Tags Build {
         Mock -CommandName 'Close-HtmlHead' -MockWith {
             return "</head>"
         }
-        Add-ClarityPSHeadSet -Title MyCard | Should be "<head><link src='somelink' /><script>someScript</script><style>Fancy Style</style><script>ForIcons</script><h3>FancyTitle</h3></br></br></title></head>"
+        Mock -CommandName 'Add-ClarityPSCookie' -MockWith {
+            return "<script>TheCookieScript</script>"
+        }
+        Add-ClarityPSHeadSet -Title MyCard | Should be "<head><link src='somelink' /><script>someScript</script><script>TheCookieScript</script><style>Fancy Style</style><script>ForIcons</script><h3>FancyTitle</h3></br></br></title></head>"
     }
     It "Should not Throw" {
         Mock -CommandName 'Add-HtmlHead' -MockWith {
@@ -119,6 +129,9 @@ Describe "Add-ClarityPSHeadSet function for $script:ModuleName" -Tags Build {
         }
         Mock -CommandName 'Close-HtmlHead' -MockWith {
             return "</head>"
+        }
+        Mock -CommandName 'Add-ClarityPSCookie' -MockWith {
+            return "<script>TheCookieScript</script>"
         }
         { Add-ClarityPSHeadSet } | Should not Throw
     }
@@ -147,6 +160,9 @@ Describe "Add-ClarityPSHeadSet function for $script:ModuleName" -Tags Build {
         Mock -CommandName 'Close-HtmlHead' -MockWith {
             return "</head>"
         }
+        Mock -CommandName 'Add-ClarityPSCookie' -MockWith {
+            return "<script>TheCookieScript</script>"
+        }
         { Add-ClarityPSHeadSet } | Should Throw
     }
     It "Should Throw when Add-ClarityPSLinkSet Fails." {
@@ -173,6 +189,9 @@ Describe "Add-ClarityPSHeadSet function for $script:ModuleName" -Tags Build {
         }
         Mock -CommandName 'Close-HtmlHead' -MockWith {
             return "</head>"
+        }
+        Mock -CommandName 'Add-ClarityPSCookie' -MockWith {
+            return "<script>TheCookieScript</script>"
         }
         { Add-ClarityPSHeadSet } | Should Throw
     }
@@ -201,6 +220,9 @@ Describe "Add-ClarityPSHeadSet function for $script:ModuleName" -Tags Build {
         Mock -CommandName 'Close-HtmlHead' -MockWith {
             return "</head>"
         }
+        Mock -CommandName 'Add-ClarityPSCookie' -MockWith {
+            return "<script>TheCookieScript</script>"
+        }
         { Add-ClarityPSHeadSet } | Should Throw
     }
     It "Should Throw when Add-ClarityPSStyleSet Fails." {
@@ -227,6 +249,9 @@ Describe "Add-ClarityPSHeadSet function for $script:ModuleName" -Tags Build {
         }
         Mock -CommandName 'Close-HtmlHead' -MockWith {
             return "</head>"
+        }
+        Mock -CommandName 'Add-ClarityPSCookie' -MockWith {
+            return "<script>TheCookieScript</script>"
         }
         { Add-ClarityPSHeadSet } | Should Throw
     }
@@ -255,6 +280,9 @@ Describe "Add-ClarityPSHeadSet function for $script:ModuleName" -Tags Build {
         Mock -CommandName 'Close-HtmlHead' -MockWith {
             return "</head>"
         }
+        Mock -CommandName 'Add-ClarityPSCookie' -MockWith {
+            return "<script>TheCookieScript</script>"
+        }
         { Add-ClarityPSHeadSet } | Should Throw
     }
     It "Should Throw when Add-HtmlTitle Fails." {
@@ -281,6 +309,9 @@ Describe "Add-ClarityPSHeadSet function for $script:ModuleName" -Tags Build {
         }
         Mock -CommandName 'Close-HtmlHead' -MockWith {
             return "</head>"
+        }
+        Mock -CommandName 'Add-ClarityPSCookie' -MockWith {
+            return "<script>TheCookieScript</script>"
         }
         { Add-ClarityPSHeadSet } | Should Throw
     }
@@ -309,6 +340,9 @@ Describe "Add-ClarityPSHeadSet function for $script:ModuleName" -Tags Build {
         Mock -CommandName 'Close-HtmlHead' -MockWith {
             return "</head>"
         }
+        Mock -CommandName 'Add-ClarityPSCookie' -MockWith {
+            return "<script>TheCookieScript</script>"
+        }
         { Add-ClarityPSHeadSet } | Should Throw
     }
     It "Should Throw when Close-HtmlHead Fails." {
@@ -335,6 +369,39 @@ Describe "Add-ClarityPSHeadSet function for $script:ModuleName" -Tags Build {
         }
         Mock -CommandName 'Close-HtmlHead' -MockWith {
             Throw "Close-HtmlHead Failed"
+        }
+        Mock -CommandName 'Add-ClarityPSCookie' -MockWith {
+            return "<script>TheCookieScript</script>"
+        }
+        { Add-ClarityPSHeadSet } | Should Throw
+    }
+    It "Should Throw when Add-ClarityPSCookie Fails." {
+        Mock -CommandName 'Add-HtmlHead' -MockWith {
+            return "<head>"
+        }
+        Mock -CommandName 'Add-ClarityPSLinkSet' -MockWith {
+            return "<link src='somelink' />"
+        }
+        Mock -CommandName 'Add-ClarityPSScriptSet' -MockWith {
+            return "<script>someScript</script>"
+        }
+        Mock -CommandName 'Add-ClarityPSStyleSet' -MockWith {
+            return "<style>Fancy Style</style>"
+        }
+        Mock -CommandName 'Add-ClarityPSIconSet' -MockWith {
+            return "<script>ForIcons</script>"
+        }
+        Mock -CommandName 'Add-HtmlTitle' -MockWith {
+            return "<h3>FancyTitle</h3></br></br>"
+        }
+        Mock -CommandName 'Close-HtmlTitle' -MockWith {
+            return "</title>"
+        }
+        Mock -CommandName 'Close-HtmlHead' -MockWith {
+            return "</head>"
+        }
+        Mock -CommandName 'Add-ClarityPSCookie' -MockWith {
+            Throw "The cookie script failed to load."
         }
         { Add-ClarityPSHeadSet } | Should Throw
     }
