@@ -9,6 +9,8 @@ PowerShell wrapper for VMware's ClarityUI components.
 [![Coverage Status](https://coveralls.io/repos/github/jpsider/ClarityPS/badge.svg?branch=master)](https://coveralls.io/github/jpsider/ClarityPS?branch=master)
 [![Documentation Status](https://img.shields.io/badge/docs-latest-brightgreen.svg?style=flat)](http://ClarityPS.readthedocs.io/en/latest/?badge=latest)
 
+![Alt text](https://github.com/jpsider/ClarityPS/blob/master/z_images/ClarityPS.png "ClarityPS Icon") 
+
 ## Docs  
 
 [Help](http://ClarityPS.readthedocs.io/en/latest/?badge=latest)
